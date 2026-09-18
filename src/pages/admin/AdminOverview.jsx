@@ -24,9 +24,10 @@ const fadeUp = {
   transition: { duration: 0.45 },
 }
 
-function KpiCard({ icon: Icon, label, value, sub, tone = 'moss' }) {
+function KpiCard({ icon: Icon, label, value, sub, tone = 'brand' }) {
   const tones = {
-    moss: 'bg-moss-700/10 text-moss-800',
+    brand: 'bg-brand-700/10 text-brand-800',
+    moss: 'bg-moss-600/10 text-moss-800',
     ember: 'bg-ember-500/10 text-ember-700',
     sky: 'bg-sky-500/10 text-sky-700',
     sand: 'bg-sand-500/10 text-sand-700',
@@ -58,7 +59,7 @@ function WeeklyBars() {
               whileInView={{ height: `${(weeklyIncoming[i] / max) * 100}%` }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: i * 0.05 }}
-              className="w-1/2 max-w-[26px] rounded-t-md bg-moss-500"
+              className="w-1/2 max-w-[26px] rounded-t-md bg-brand-500"
               title={`Masuk: ${weeklyIncoming[i]}`}
             />
             <motion.div
@@ -66,7 +67,7 @@ function WeeklyBars() {
               whileInView={{ height: `${(weeklyCompleted[i] / max) * 100}%` }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.1 + i * 0.05 }}
-              className="w-1/2 max-w-[26px] rounded-t-md bg-ember-400"
+              className="w-1/2 max-w-[26px] rounded-t-md bg-moss-500"
               title={`Selesai: ${weeklyCompleted[i]}`}
             />
           </div>
@@ -115,7 +116,7 @@ export default function AdminOverview() {
       <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
         <KpiCard icon={ClipboardList} label="Total kebutuhan" value={formatID(needs.length)} sub="sejak Mei 2026" />
         <KpiCard icon={Flame} label="Kebutuhan aktif" value={formatID(s.activeCount)} tone="ember" sub="berjalan & hampir terpenuhi" />
-        <KpiCard icon={CheckCircle2} label="Kebutuhan selesai" value={formatID(s.doneCount)} sub="dengan laporan lengkap" />
+        <KpiCard icon={CheckCircle2} label="Kebutuhan selesai" value={formatID(s.doneCount)} tone="moss" sub="dengan laporan lengkap" />
         <KpiCard icon={Hourglass} label="Menunggu verifikasi" value={formatID(s.pending)} tone="sky" sub="rata-rata 3,2 hari proses" />
         <KpiCard icon={Wallet} label="Total bantuan terkumpul" value={rupiahShort(s.collectedRp)} sub="akumulasi semua program" />
         <KpiCard icon={ArrowUpRight} label="Kebutuhan terpenuhi" value={formatID(s.fulfilled)} sub="satuan gabungan (kg/paket/tangki)" />
@@ -131,7 +132,7 @@ export default function AdminOverview() {
               <h2 className="font-display text-lg font-semibold text-sand-950">Funnel kebutuhan</h2>
               <p className="text-xs text-sand-500">Diajukan → Selesai, kumulatif 8 minggu terakhir</p>
             </div>
-            <Link to="/operations/kebutuhan" className="text-xs font-bold text-moss-700 hover:underline">
+            <Link to="/operations/kebutuhan" className="text-xs font-bold text-brand-700 hover:underline">
               Semua kebutuhan
             </Link>
           </div>
@@ -145,7 +146,7 @@ export default function AdminOverview() {
                     whileInView={{ width: `${(f.count / maxFunnel) * 100}%` }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8, delay: i * 0.06, ease: [0.22, 1, 0.36, 1] }}
-                    className="flex h-full items-center justify-end rounded-lg bg-gradient-to-r from-moss-700 to-moss-500 pr-2.5"
+                    className="flex h-full items-center justify-end rounded-lg bg-gradient-to-r from-brand-700 to-brand-500 pr-2.5"
                   >
                     <span className="tnum text-[11px] font-bold text-white">{f.count}</span>
                   </motion.div>
@@ -172,7 +173,7 @@ export default function AdminOverview() {
         {/* Weekly */}
         <div className="card p-6">
           <h2 className="font-display text-lg font-semibold text-sand-950">Kebutuhan per minggu</h2>
-          <p className="text-xs text-sand-500">Hijau: masuk · Oranye: selesai</p>
+          <p className="text-xs text-sand-500">Biru: masuk · Hijau: selesai</p>
           <WeeklyBars />
           <div className="mt-4 grid grid-cols-2 gap-3 border-t border-sand-100 pt-4 text-center">
             <div>
@@ -191,7 +192,7 @@ export default function AdminOverview() {
       <div className="card p-6">
         <div className="flex items-center justify-between">
           <h2 className="font-display text-lg font-semibold text-sand-950">Perlu perhatian tim</h2>
-          <Link to="/operations/pelaksanaan" className="inline-flex items-center gap-1 text-xs font-bold text-moss-700 hover:underline">
+          <Link to="/operations/pelaksanaan" className="inline-flex items-center gap-1 text-xs font-bold text-brand-700 hover:underline">
             Buka pelaksanaan <ArrowRight size={12} />
           </Link>
         </div>
@@ -211,17 +212,17 @@ export default function AdminOverview() {
                   className="h-12 w-16 shrink-0 rounded-lg object-cover"
                 />
                 <div className="min-w-0 flex-1">
-                  <p className="truncate text-sm font-bold text-sand-950 group-hover:text-moss-800">{n.title}</p>
+                  <p className="truncate text-sm font-bold text-sand-950 group-hover:text-brand-800">{n.title}</p>
                   <p className="text-xs text-sand-500">
                     {cat.short} · {n.location.regency} · {n.neededNow || 'selesai'}
                   </p>
                 </div>
                 <div className="hidden w-32 sm:block">
                   <div className="h-1.5 overflow-hidden rounded-full bg-sand-100">
-                    <div className="h-full rounded-full bg-moss-600" style={{ width: `${pct(n.collected, n.target)}%` }} />
+                    <div className="h-full rounded-full bg-brand-600" style={{ width: `${pct(n.collected, n.target)}%` }} />
                   </div>
                 </div>
-                <ArrowUpRight size={15} className="shrink-0 text-sand-300 transition-colors group-hover:text-moss-700" />
+                <ArrowUpRight size={15} className="shrink-0 text-sand-300 transition-colors group-hover:text-brand-700" />
               </Link>
             )
           })}

@@ -2,6 +2,7 @@ import { Wheat, ShoppingBasket, Droplets, GraduationCap, Tent, HeartPulse } from
 
 /**
  * Kategori layanan "Bantu ..." — 5 aktif + 1 segera hadir.
+ * Palet: dominan biru (brand), sekunder hijau, aksen merah — dari logo.
  * Foto adalah dokumentasi nyata (bukan stock generik), bersumber dari
  * proyek dokumentasi: UNICEF, World Bank, Wikimedia Commons. Sumber dicantumkan.
  */
@@ -19,7 +20,7 @@ export const categories = [
     image:
       'https://live.staticflickr.com/8249/8511071806_454d85742a_b.jpg',
     imageCredit: 'DFID (CC BY 2.0)',
-    color: '#406c2d',
+    color: '#2f66d4', // biru brand
     active: true,
   },
   {
@@ -35,7 +36,7 @@ export const categories = [
     image:
       'https://upload.wikimedia.org/wikipedia/commons/d/d1/Relawan_PKS_memberi_bantuan_banjir_di_Padang.jpg',
     imageCredit: 'Wikimedia Commons (CC BY-SA 4.0)',
-    color: '#a43c1e',
+    color: '#e8480f', // aksen merah logo
     active: true,
   },
   {
@@ -51,7 +52,7 @@ export const categories = [
     image:
       'https://live.staticflickr.com/8349/8184611897_e1a9df95b7_b.jpg',
     imageCredit: 'UNICEF Ethiopia (CC BY-NC-ND 2.0)',
-    color: '#1f6f8b',
+    color: '#0369a1', // biru laut
     active: true,
   },
   {
@@ -67,7 +68,7 @@ export const categories = [
     image:
       'https://live.staticflickr.com/8122/8775444854_fa9e2944b1_b.jpg',
     imageCredit: 'World Bank Photo Collection (CC BY-NC-ND 2.0)',
-    color: '#7c5cbf',
+    color: '#16a34a', // hijau sekunder
     active: true,
   },
   {

@@ -106,7 +106,7 @@ export default function AdminNeedDetail() {
                   <p className="text-[10px] font-bold text-sand-500">Target {need.unit === 'Rp' ? 'dana' : need.unit}</p>
                 </div>
                 <div className="rounded-xl bg-sand-50 p-3.5 text-center">
-                  <p className="font-display text-lg font-semibold text-moss-700">{formatID(need.collected)}</p>
+                  <p className="font-display text-lg font-semibold text-brand-700">{formatID(need.collected)}</p>
                   <p className="text-[10px] font-bold text-sand-500">Terkumpul</p>
                 </div>
                 <div className="rounded-xl bg-sand-50 p-3.5 text-center">
@@ -133,7 +133,7 @@ export default function AdminNeedDetail() {
                     <li key={stage.id} className="flex gap-3">
                       <span
                         className={`mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-full text-[10px] font-bold ${
-                          isDone ? 'bg-moss-700 text-white' : 'bg-sand-100 text-sand-400'
+                          isDone ? 'bg-brand-700 text-white' : 'bg-sand-100 text-sand-400'
                         }`}
                       >
                         {isDone ? <BadgeCheck size={14} /> : i + 1}
@@ -156,7 +156,7 @@ export default function AdminNeedDetail() {
           <div className="space-y-5">
             <div className="card p-6">
               <h3 className="flex items-center gap-2 text-sm font-bold text-sand-950">
-                <UserRound size={15} className="text-moss-700" /> Pengusul
+                <UserRound size={15} className="text-brand-700" /> Pengusul
               </h3>
               <p className="mt-2 text-sm font-bold text-sand-950">{need.proposer.name}</p>
               <p className="text-xs text-sand-500">{need.proposer.role}</p>
@@ -165,7 +165,7 @@ export default function AdminNeedDetail() {
 
             <div className="card p-6">
               <h3 className="flex items-center gap-2 text-sm font-bold text-sand-950">
-                <ShieldCheck size={15} className="text-moss-700" /> Verifikasi
+                <ShieldCheck size={15} className="text-brand-700" /> Verifikasi
               </h3>
               <p className="mt-2 text-sm text-sand-700">{need.verifier}</p>
               <p className="tnum mt-1 text-xs text-sand-500">
@@ -175,12 +175,12 @@ export default function AdminNeedDetail() {
 
             <div className="card p-6">
               <h3 className="flex items-center gap-2 text-sm font-bold text-sand-950">
-                <Handshake size={15} className="text-moss-700" /> Mitra pelaksana
+                <Handshake size={15} className="text-brand-700" /> Mitra pelaksana
               </h3>
               <p className="mt-2 text-sm font-bold text-sand-950">{partner?.name || 'Menunggu penugasan'}</p>
               {partner && <p className="text-xs text-sand-500">{partner.type} · {partner.region}</p>}
               {need.execution && (
-                <p className="mt-2 flex items-center gap-1.5 text-xs font-semibold text-moss-700">
+                <p className="mt-2 flex items-center gap-1.5 text-xs font-semibold text-brand-700">
                   <Clock3 size={13} /> {need.execution.progressLabel} · ETA {need.execution.etaDays} hari
                 </p>
               )}
@@ -194,7 +194,7 @@ export default function AdminNeedDetail() {
         <div className="grid gap-5 lg:grid-cols-2">
           <div className="card p-6">
             <h2 className="flex items-center gap-2 font-display text-lg font-semibold text-sand-950">
-              <Wallet size={17} className="text-moss-700" /> Rincian anggaran
+              <Wallet size={17} className="text-brand-700" /> Rincian anggaran
             </h2>
             <ul className="tnum mt-5 space-y-3.5 text-sm">
               <li className="flex items-center justify-between">
@@ -212,15 +212,15 @@ export default function AdminNeedDetail() {
             </ul>
             <div className="mt-5 space-y-2.5">
               <div className="flex h-3.5 overflow-hidden rounded-full">
-                <div className="bg-moss-600" style={{ width: `${procPct}%` }} />
-                <div className="bg-ember-400" style={{ width: `${opsPct}%` }} />
+                <div className="bg-brand-600" style={{ width: `${procPct}%` }} />
+                <div className="bg-moss-500" style={{ width: `${opsPct}%` }} />
               </div>
               <div className="flex justify-between text-[11px] font-bold text-sand-500">
                 <span className="inline-flex items-center gap-1.5">
-                  <span className="h-2.5 w-2.5 rounded-sm bg-moss-600" /> Pengadaan {procPct}%
+                  <span className="h-2.5 w-2.5 rounded-sm bg-brand-600" /> Pengadaan {procPct}%
                 </span>
                 <span className="inline-flex items-center gap-1.5">
-                  <span className="h-2.5 w-2.5 rounded-sm bg-ember-400" /> Operasional {opsPct}%
+                  <span className="h-2.5 w-2.5 rounded-sm bg-moss-500" /> Operasional {opsPct}%
                 </span>
               </div>
             </div>
@@ -259,9 +259,9 @@ export default function AdminNeedDetail() {
         <div className="card p-6">
           <div className="flex items-center justify-between">
             <h2 className="flex items-center gap-2 font-display text-lg font-semibold text-sand-950">
-              <Camera size={17} className="text-moss-700" /> Dokumentasi & bukti
+              <Camera size={17} className="text-brand-700" /> Dokumentasi & bukti
             </h2>
-            <Link to={`/kebutuhan/${need.id}`} className="text-xs font-bold text-moss-700 hover:underline">
+            <Link to={`/kebutuhan/${need.id}`} className="text-xs font-bold text-brand-700 hover:underline">
               Lihat versi publik
             </Link>
           </div>
@@ -297,7 +297,7 @@ export default function AdminNeedDetail() {
             Verifikasi dilakukan {need.verifier} sebelum kebutuhan tayang. Kebutuhan ini tayang ke publik pada{' '}
             {formatDate(need.createdAt)}.
           </p>
-          <div className="mt-4 rounded-xl bg-moss-50 p-4 text-sm text-moss-900">
+          <div className="mt-4 rounded-xl bg-brand-50 p-4 text-sm text-brand-900">
             <p className="font-bold">Hasil verifikasi</p>
             <p className="mt-1 text-[13px] leading-relaxed">
               Jumlah penerima, kondisi lapangan, dan urgensi sesuai pengajuan. Kebutuhan valid untuk dipublikasikan.

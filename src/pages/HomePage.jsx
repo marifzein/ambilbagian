@@ -44,7 +44,7 @@ export default function HomePage() {
       <section className="relative overflow-hidden">
         <div className="container-app grid items-center gap-10 pb-16 pt-10 lg:grid-cols-[1.05fr_0.95fr] lg:pb-24 lg:pt-16">
           <motion.div {...fadeUp}>
-            <p className="inline-flex items-center gap-2 rounded-full border border-moss-200 bg-moss-50 px-3.5 py-1.5 text-xs font-bold text-moss-800">
+            <p className="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-brand-50 px-3.5 py-1.5 text-xs font-bold text-brand-800">
               <MapPin size={13} />
               Peta kebutuhan nyata — dimulai dari Bojonegoro
             </p>
@@ -67,7 +67,7 @@ export default function HomePage() {
               lalu bantu sesuai kemampuanmu.
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <Link to="/kebutuhan" className="btn-ember btn-lg">
+              <Link to="/kebutuhan" className="btn-primary btn-lg">
                 Lihat Kebutuhan
                 <ArrowRight size={17} />
               </Link>
@@ -77,7 +77,7 @@ export default function HomePage() {
               </button>
             </div>
             <p className="mt-6 flex items-center gap-1.5 text-xs text-sand-500">
-              <ShieldCheck size={14} className="text-moss-600" />
+              <ShieldCheck size={14} className="text-brand-600" />
               Setiap kebutuhan diverifikasi sebelum tampil. Progress dan bukti distribusi terbuka untuk semua.
             </p>
           </motion.div>
@@ -104,14 +104,14 @@ export default function HomePage() {
 
             {/* Kartu melayang: mini peta */}
             <div className="absolute -left-3 -top-5 hidden w-44 rotate-[-3deg] rounded-2xl border border-sand-200 bg-white p-3 shadow-lift sm:block">
-              <div className="relative h-20 overflow-hidden rounded-xl bg-[#eef0e4]">
-                <div className="absolute inset-0 opacity-40 [background-image:radial-gradient(#c2d9b8_1.4px,transparent_1.4px)] [background-size:10px_10px]" />
+              <div className="relative h-20 overflow-hidden rounded-xl bg-[#eef2fb]">
+                <div className="absolute inset-0 opacity-40 [background-image:radial-gradient(#b3cbfb_1.4px,transparent_1.4px)] [background-size:10px_10px]" />
                 <svg viewBox="0 0 100 60" className="absolute inset-0 h-full w-full">
-                  <path d="M8 46C26 40 38 22 62 18" stroke="#9bc08c" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-                  <circle cx="62" cy="18" r="4.5" fill="#d95f38" />
-                  <circle cx="30" cy="34" r="3.5" fill="#406c2d" />
-                  <circle cx="80" cy="34" r="3.5" fill="#7c5cbf" />
-                  <circle cx="46" cy="46" r="3.5" fill="#1f6f8b" />
+                  <path d="M8 46C26 40 38 22 62 18" stroke="#84aaf8" strokeWidth="2.5" fill="none" strokeLinecap="round" />
+                  <circle cx="62" cy="18" r="4.5" fill="#e8480f" />
+                  <circle cx="30" cy="34" r="3.5" fill="#2f66d4" />
+                  <circle cx="80" cy="34" r="3.5" fill="#16a34a" />
+                  <circle cx="46" cy="46" r="3.5" fill="#0369a1" />
                 </svg>
               </div>
               <p className="mt-2 text-center text-[11px] font-bold text-sand-700">
@@ -122,7 +122,7 @@ export default function HomePage() {
             {/* Kartu melayang: progress */}
             {featured[0] && (
               <div className="absolute -bottom-6 right-2 w-64 rounded-2xl border border-sand-200 bg-white p-4 shadow-lift sm:-right-5">
-                <p className="text-[11px] font-bold uppercase tracking-wider text-moss-700">Bantu Beras · Desa Sukodadi</p>
+                <p className="text-[11px] font-bold uppercase tracking-wider text-brand-700">Bantu Beras · Desa Sukodadi</p>
                 <p className="tnum mt-1 text-sm font-bold text-sand-950">
                   {formatID(featured[0].collected)} / {formatID(featured[0].target)} kg
                 </p>
@@ -148,7 +148,7 @@ export default function HomePage() {
             { value: formatID(stats.regencyCount), label: 'Wilayah' },
           ].map((s) => (
             <motion.div key={s.label} {...fadeUp}>
-              <p className="tnum font-display text-3xl font-semibold text-moss-800 md:text-4xl">{s.value}</p>
+              <p className="tnum font-display text-3xl font-semibold text-brand-800 md:text-4xl">{s.value}</p>
               <p className="mt-1.5 text-sm font-medium text-sand-600">{s.label}</p>
             </motion.div>
           ))}
@@ -209,11 +209,11 @@ export default function HomePage() {
                     <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-sand-600">{cat.description}</p>
                     <div className="mt-auto flex items-center justify-between pt-4">
                       {cat.active ? (
-                        <span className="tnum text-xs font-bold text-moss-700">{count} kebutuhan aktif</span>
+                        <span className="tnum text-xs font-bold text-brand-700">{count} kebutuhan aktif</span>
                       ) : (
                         <span className="text-xs font-semibold text-sand-400">Belum menerima bantuan</span>
                       )}
-                      <span className="inline-flex items-center gap-1 text-sm font-bold text-moss-700 transition-all group-hover:gap-2.5">
+                      <span className="inline-flex items-center gap-1 text-sm font-bold text-brand-700 transition-all group-hover:gap-2.5">
                         {cat.active ? 'Lihat' : 'Nantikan'} <ArrowRight size={15} />
                       </span>
                     </div>
@@ -246,13 +246,13 @@ export default function HomePage() {
       </section>
 
       {/* ================= CTA BAND ================= */}
-      <section className="bg-moss-900">
+      <section className="bg-brand-900">
         <div className="container-app flex flex-col items-start justify-between gap-6 py-14 md:flex-row md:items-center md:py-16">
           <div>
             <h2 className="font-display text-3xl font-semibold leading-tight text-white md:text-4xl">
               Kamu nggak harus bantu semuanya.
               <br />
-              <span className="text-moss-200">Cukup ambil bagian.</span>
+              <span className="text-brand-200">Cukup ambil bagian.</span>
             </h2>
             <p className="mt-3 max-w-md text-sand-200">
               Rp10 ribu pun berarti. Berapa pun yang kamu bisa bantu, itu sangat berarti.
@@ -262,7 +262,7 @@ export default function HomePage() {
             <Link to="/peta" className="btn-lg btn border border-white/25 bg-white/10 text-white hover:bg-white/20">
               Buka Peta Kebutuhan
             </Link>
-            <button onClick={() => setCtaNeed(featured[1] || featured[0])} className="btn-lg btn-ember">
+            <button onClick={() => setCtaNeed(featured[1] || featured[0])} className="btn-lg btn-primary">
               Ambil Bagian Sekarang
             </button>
           </div>

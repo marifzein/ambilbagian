@@ -44,7 +44,7 @@ export default function AdminNeeds() {
               value={q}
               onChange={(e) => setQ(e.target.value)}
               placeholder="Cari ID, judul, desa, atau kota…"
-              className="w-full rounded-xl border border-sand-200 py-2.5 pl-10 pr-4 text-sm focus:border-moss-600 focus:outline-none"
+              className="w-full rounded-xl border border-sand-200 py-2.5 pl-10 pr-4 text-sm focus:border-brand-600 focus:outline-none"
             />
           </div>
           <select
@@ -94,7 +94,7 @@ export default function AdminNeeds() {
                         <img src={n.media[0]?.url || catObj.image} alt="" loading="lazy" className="h-10 w-14 shrink-0 rounded-lg object-cover" />
                         <div className="min-w-0">
                           <p className="tnum text-[11px] font-bold text-sand-400">{n.id}</p>
-                          <Link to={`/operations/kebutuhan/${n.id}`} className="block max-w-[340px] truncate font-bold text-sand-950 group-hover:text-moss-800">
+                          <Link to={`/operations/kebutuhan/${n.id}`} className="block max-w-[340px] truncate font-bold text-sand-950 group-hover:text-brand-800">
                             {n.title}
                           </Link>
                           <p className="text-xs text-sand-500">{n.location.village}, {n.location.regency}</p>
@@ -117,7 +117,7 @@ export default function AdminNeeds() {
                     <td className="px-3 py-3.5">
                       <div className="w-32">
                         <div className="h-1.5 overflow-hidden rounded-full bg-sand-100">
-                          <div className="h-full rounded-full bg-moss-600" style={{ width: `${percent}%` }} />
+                          <div className="h-full rounded-full bg-brand-600" style={{ width: `${percent}%` }} />
                         </div>
                         <p className="tnum mt-1 text-[11px] font-bold text-sand-500">{percent}%</p>
                       </div>
@@ -125,7 +125,7 @@ export default function AdminNeeds() {
                     <td className="px-5 py-3.5 text-right">
                       <Link
                         to={`/operations/kebutuhan/${n.id}`}
-                        className="inline-flex items-center gap-1 text-xs font-bold text-moss-700 hover:underline"
+                        className="inline-flex items-center gap-1 text-xs font-bold text-brand-700 hover:underline"
                       >
                         Detail <ArrowUpRight size={13} />
                       </Link>

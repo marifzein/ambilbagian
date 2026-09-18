@@ -39,15 +39,15 @@ export default function ProgressPage() {
   return (
     <div>
       {/* Header gelap */}
-      <section className="bg-moss-950">
+      <section className="bg-brand-950">
         <div className="container-app py-10 md:py-14">
           <Link
             to={`/kebutuhan/${need.id}`}
-            className="inline-flex items-center gap-1.5 text-sm font-semibold text-moss-200 transition-colors hover:text-white"
+            className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-200 transition-colors hover:text-white"
           >
             <ArrowLeft size={15} /> Kembali ke detail kebutuhan
           </Link>
-          <p className="mt-5 text-xs font-bold uppercase tracking-[0.18em] text-moss-300">
+          <p className="mt-5 text-xs font-bold uppercase tracking-[0.18em] text-brand-300">
             {cat.name} · {need.id}
           </p>
           <h1 className="mt-2 max-w-3xl font-display text-3xl font-semibold leading-tight text-white md:text-4xl">
@@ -57,7 +57,7 @@ export default function ProgressPage() {
             <span className={`rounded-full border bg-white/95 px-3 py-1 text-xs font-bold ${statusMeta[need.status].tone}`}>
               {statusMeta[need.status].label}
             </span>
-            <p className="tnum text-sm font-semibold text-moss-100">
+            <p className="tnum text-sm font-semibold text-brand-100">
               {formatID(need.collected)} / {formatID(need.target)} {need.unit === 'Rp' ? '— dana' : need.unit} ·{' '}
               {pct(need.collected, need.target)}%
             </p>
@@ -88,7 +88,7 @@ export default function ProgressPage() {
               >
                 <span
                   className={`grid h-11 w-11 shrink-0 place-items-center rounded-xl ${
-                    isDone ? 'bg-moss-700 text-white' : 'bg-sand-100 text-sand-400'
+                    isDone ? 'bg-brand-700 text-white' : 'bg-sand-100 text-sand-400'
                   }`}
                 >
                   <Icon size={20} />
@@ -100,7 +100,7 @@ export default function ProgressPage() {
                       <span className={`font-bold ${isDone ? 'text-sand-950' : 'text-sand-500'}`}>{stage.label}</span>
                     </p>
                     {entry?.date ? (
-                      <span className="tnum inline-flex items-center gap-1.5 rounded-full bg-moss-50 px-2.5 py-1 text-[11px] font-bold text-moss-800">
+                      <span className="tnum inline-flex items-center gap-1.5 rounded-full bg-brand-50 px-2.5 py-1 text-[11px] font-bold text-brand-800">
                         <CalendarDays size={12} /> {formatDate(entry.date)}
                       </span>
                     ) : (
@@ -179,12 +179,12 @@ export default function ProgressPage() {
             </div>
           )}
 
-          <div className="rounded-2xl bg-moss-900 p-6 text-sand-100">
+          <div className="rounded-2xl bg-brand-900 p-6 text-sand-100">
             <p className="font-display text-xl font-semibold text-white">Kamu bisa mempercepat tahap ini</p>
             <p className="mt-2 text-sm leading-relaxed text-sand-200">
               Berapa pun yang kamu bisa bantu, itu sangat berarti.
             </p>
-            <Link to={`/kebutuhan/${need.id}`} className="btn-ember mt-4 w-full">
+            <Link to={`/kebutuhan/${need.id}`} className="btn-primary mt-4 w-full">
               Buka kebutuhan
             </Link>
           </div>

@@ -29,7 +29,7 @@ export default function MapPage() {
           </p>
         </div>
         <p className="tnum flex items-center gap-2 rounded-full border border-sand-200 bg-white px-4 py-2 text-sm font-bold text-sand-700 shadow-soft">
-          <MapPinned size={16} className="text-moss-700" />
+          <MapPinned size={16} className="text-brand-700" />
           {items.length} titik kebutuhan
         </p>
       </header>

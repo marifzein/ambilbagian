@@ -36,7 +36,7 @@ export default function AdminExecution() {
                     <span className="text-xs font-bold" style={{ color: cat.color }}>{cat.name}</span>
                     <span className={`rounded-full border px-2 py-0.5 text-[10px] font-bold ${status.tone}`}>{status.label}</span>
                   </div>
-                  <Link to={`/operations/kebutuhan/${n.id}`} className="mt-0.5 block truncate font-bold text-sand-950 hover:text-moss-800">
+                  <Link to={`/operations/kebutuhan/${n.id}`} className="mt-0.5 block truncate font-bold text-sand-950 hover:text-brand-800">
                     {n.title}
                   </Link>
                   <p className="text-xs text-sand-500">{n.location.village}, {n.location.regency}</p>
@@ -56,15 +56,15 @@ export default function AdminExecution() {
                     <Clock3 size={14} className="text-ember-600" /> ETA {n.execution.etaDays} hari
                   </span>
                   <span className="inline-flex items-center gap-1.5 text-xs font-bold text-sand-700">
-                    <Camera size={14} className="text-moss-600" /> {n.execution.photoCount} foto
+                    <Camera size={14} className="text-brand-600" /> {n.execution.photoCount} foto
                   </span>
                 </div>
                 <div className="sm:text-right">
-                  <span className="tnum text-sm font-bold text-moss-700">{pct(n.collected, n.target)}% terpenuhi</span>
+                  <span className="tnum text-sm font-bold text-brand-700">{pct(n.collected, n.target)}% terpenuhi</span>
                 </div>
                 <div className="sm:col-span-2">
                   <div className="h-2 overflow-hidden rounded-full bg-sand-100">
-                    <div className="h-full rounded-full bg-moss-600 transition-all" style={{ width: `${pct(n.collected, n.target)}%` }} />
+                    <div className="h-full rounded-full bg-brand-600 transition-all" style={{ width: `${pct(n.collected, n.target)}%` }} />
                   </div>
                 </div>
               </div>
@@ -72,7 +72,7 @@ export default function AdminExecution() {
                 <span className="inline-flex items-center gap-1.5 text-[11px] font-bold text-sand-500">
                   <Truck size={13} /> Dana distribusi & operasional tampil terbuka di laporan
                 </span>
-                <Link to={`/operations/kebutuhan/${n.id}`} className="inline-flex items-center gap-1 text-xs font-bold text-moss-700 hover:underline">
+                <Link to={`/operations/kebutuhan/${n.id}`} className="inline-flex items-center gap-1 text-xs font-bold text-brand-700 hover:underline">
                   Detail internal <ArrowUpRight size={13} />
                 </Link>
               </div>

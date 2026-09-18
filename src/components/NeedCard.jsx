@@ -93,8 +93,8 @@ export default function NeedCard({ need, layout = 'vertical' }) {
         <div className="mt-2">
           <Progress collected={need.collected} target={need.target} tone="moss" size="sm" showPct />
         </div>
-        <p className="mt-2.5 text-xs font-semibold text-moss-700">{remaining}</p>
-        <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-bold text-moss-700 transition-all group-hover:gap-2.5 group-hover:text-moss-800">
+        <p className="mt-2.5 text-xs font-semibold text-brand-700">{remaining}</p>
+        <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-bold text-brand-700 transition-all group-hover:gap-2.5 group-hover:text-brand-800">
           Lihat Detail <ArrowRight size={15} />
         </span>
       </div>

@@ -94,7 +94,7 @@ export default function NeedsPage() {
               value={q}
               onChange={(e) => setQ(e.target.value)}
               placeholder="Cari kebutuhan, desa, atau kota…"
-              className="w-full rounded-full border border-sand-200 bg-white py-2.5 pl-10 pr-4 text-sm text-sand-900 placeholder:text-sand-400 focus:border-moss-600 focus:outline-none focus:ring-2 focus:ring-moss-600/15"
+              className="w-full rounded-full border border-sand-200 bg-white py-2.5 pl-10 pr-4 text-sm text-sand-900 placeholder:text-sand-400 focus:border-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-600/15"
             />
           </div>
           <div className="nice-scroll flex items-center gap-2 overflow-x-auto pb-0.5">
@@ -154,7 +154,7 @@ export default function NeedsPage() {
               <button
                 key={chip.label}
                 onClick={chip.clear}
-                className="inline-flex items-center gap-1 rounded-full bg-moss-700/10 px-3 py-1 text-xs font-bold text-moss-800 hover:bg-moss-700/15"
+                className="inline-flex items-center gap-1 rounded-full bg-brand-700/10 px-3 py-1 text-xs font-bold text-brand-800 hover:bg-brand-700/15"
               >
                 {chip.label} <X size={12} />
               </button>

@@ -3,23 +3,17 @@
 > vite
 
 
-  [32m[1mVITE[22m v5.4.21[39m  [2mready in [0m[1m467[22m[2m[0m ms[22m
+  [32m[1mVITE[22m v5.4.21[39m  [2mready in [0m[1m666[22m[2m[0m ms[22m
 
   [32m➜[39m  [1mLocal[22m:   [36mhttp://127.0.0.1:[1m5173[22m/[39m
-[2m9:14:38 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/index.css, /src/pages/HomePage.jsx, /src/pages/NeedsPage.jsx, /src/pages/MapPage.jsx, /src/pages/NeedDetailPage.jsx, /src/pages/ProgressPage.jsx, /src/pages/admin/AdminParticipation.jsx, /src/pages/admin/AdminNeeds.jsx, /src/pages/admin/AdminVerification.jsx, /src/pages/admin/AdminMap.jsx, /src/pages/admin/AdminOverview.jsx, /src/pages/admin/AdminExecution.jsx, /src/pages/admin/AdminReports.jsx, /src/pages/admin/AdminAnalytics.jsx, /src/pages/admin/AdminNeedDetail.jsx, /src/components/NeedsMap.jsx, /src/components/NeedCard.jsx, /src/components/ContributeModal.jsx[22m
-[2m9:14:38 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/store/AppContext.jsx, /src/index.css, /src/pages/NeedDetailPage.jsx, /src/pages/ProgressPage.jsx, /src/pages/admin/AdminNeedDetail.jsx[22m
-[2m9:14:39 PM[22m [36m[1m[vite][22m[39m [33mhmr invalidate [39m[2m/src/store/AppContext.jsx[22m Could not Fast Refresh ("useApp" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
-[2m9:14:39 PM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/store/AppContext.jsx[22m
-[2m9:14:45 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/store/AppContext.jsx, /src/index.css, /src/pages/NeedDetailPage.jsx, /src/pages/ProgressPage.jsx, /src/pages/admin/AdminNeedDetail.jsx[22m
-[2m9:14:59 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/store/AppContext.jsx, /src/index.css, /src/pages/NeedDetailPage.jsx, /src/pages/ProgressPage.jsx, /src/pages/admin/AdminNeedDetail.jsx[22m
-[2m9:14:59 PM[22m [36m[1m[vite][22m[39m [33mhmr invalidate [39m[2m/src/store/AppContext.jsx[22m Could not Fast Refresh ("useApp" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
-[2m9:14:59 PM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/store/AppContext.jsx[22m
-[2m9:17:25 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/store/AppContext.jsx, /src/index.css[22m
-[2m9:17:25 PM[22m [36m[1m[vite][22m[39m [33mhmr invalidate [39m[2m/src/store/AppContext.jsx[22m Could not Fast Refresh ("useApp" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
-[2m9:17:25 PM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/store/AppContext.jsx[22m
-[2m9:25:06 PM[22m [36m[1m[vite][22m[39m [32mvite.config.js changed, restarting server...[39m
-[2m9:25:06 PM[22m [36m[1m[vite][22m[39m server restarted.
-[2m9:30:43 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/layouts/PublicLayout.jsx, /src/index.css[22m
-[2m9:30:43 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/layouts/AdminLayout.jsx, /src/index.css[22m
-[2m9:31:47 PM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/main.jsx[22m
-[2m10:07:34 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/NeedsMap.jsx, /src/index.css[22m
+[2m11:13:46 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/ContributeModal.jsx, /src/index.css[22m
+[2m11:13:46 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/layouts/PublicLayout.jsx, /src/index.css[22m
+[2m11:13:46 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/AboutPage.jsx, /src/index.css[22m
+[2m11:13:46 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/HomePage.jsx, /src/index.css[22m
+[2m11:13:46 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/HowItWorksPage.jsx, /src/index.css[22m
+[2m11:13:46 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/NeedDetailPage.jsx, /src/index.css[22m
+[2m11:13:46 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/ProgressPage.jsx, /src/index.css[22m
+[2m11:14:09 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/index.css[22m
+[2m11:14:17 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/admin/AdminOverview.jsx, /src/index.css[22m
+[2m11:14:30 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/admin/AdminAnalytics.jsx, /src/index.css[22m
+[2m11:14:41 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/admin/AdminNeedDetail.jsx, /src/index.css[22m

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom'
-import { Menu, X, Sprout, MapPinned, ArrowUpRight } from 'lucide-react'
+import { Menu, X, MapPinned, ArrowUpRight } from 'lucide-react'
 
 const NAV = [
   { to: '/', label: 'Home', end: true },
@@ -13,14 +13,16 @@ const NAV = [
 export function Wordmark({ light = false }) {
   return (
     <Link to="/" className="group inline-flex items-center gap-2.5">
-      <span className="grid h-9 w-9 place-items-center rounded-xl bg-moss-700 text-white transition-transform duration-300 group-hover:rotate-6">
-        <Sprout size={18} strokeWidth={2.2} />
-      </span>
+      <img
+        src="/logo.png"
+        alt="Logo Ambil Bagian"
+        className="h-9 w-auto transition-transform duration-300 group-hover:scale-105"
+      />
       <span className="flex flex-col leading-none">
-        <span className={`font-display text-lg font-semibold tracking-tight ${light ? 'text-white' : 'text-sand-950'}`}>
+        <span className={`font-display text-lg font-semibold tracking-tight ${light ? 'text-white' : 'text-brand-950'}`}>
           Ambil Bagian
         </span>
-        <span className={`text-[10px] font-semibold uppercase tracking-[0.22em] ${light ? 'text-sand-300' : 'text-moss-700'}`}>
+        <span className={`text-[10px] font-semibold uppercase tracking-[0.22em] ${light ? 'text-sand-300' : 'text-brand-600'}`}>
           Peta Kebutuhan Nyata
         </span>
       </span>
@@ -50,7 +52,7 @@ export default function PublicLayout() {
                 end={item.end}
                 className={({ isActive }) =>
                   `rounded-full px-3.5 py-2 text-sm font-semibold transition-colors ${
-                    isActive ? 'bg-moss-700/10 text-moss-800' : 'text-sand-700 hover:bg-sand-100 hover:text-sand-950'
+                    isActive ? 'bg-brand-700/10 text-brand-800' : 'text-sand-700 hover:bg-sand-100 hover:text-sand-950'
                   }`
                 }
               >
@@ -59,7 +61,7 @@ export default function PublicLayout() {
             ))}
           </nav>
           <div className="flex items-center gap-2">
-            <Link to="/kebutuhan" className="btn-ember hidden sm:inline-flex">
+            <Link to="/kebutuhan" className="btn-primary hidden sm:inline-flex">
               Ambil Bagian
               <ArrowUpRight size={16} />
             </Link>
@@ -81,14 +83,14 @@ export default function PublicLayout() {
                 end={item.end}
                 className={({ isActive }) =>
                   `block rounded-xl px-3 py-3 text-base font-semibold ${
-                    isActive ? 'bg-moss-700/10 text-moss-800' : 'text-sand-800'
+                    isActive ? 'bg-brand-700/10 text-brand-800' : 'text-sand-800'
                   }`
                 }
               >
                 {item.label}
               </NavLink>
             ))}
-            <Link to="/kebutuhan" className="btn-ember mt-3 w-full">
+            <Link to="/kebutuhan" className="btn-primary mt-3 w-full">
               Ambil Bagian
             </Link>
           </nav>
@@ -113,10 +115,10 @@ export default function PublicLayout() {
           <div>
             <p className="eyebrow">Jelajahi</p>
             <ul className="mt-3 space-y-2 text-sm text-sand-700">
-              <li><Link className="hover:text-moss-800" to="/kebutuhan">Daftar Kebutuhan</Link></li>
-              <li><Link className="hover:text-moss-800" to="/peta">Peta Kebutuhan</Link></li>
-              <li><Link className="hover:text-moss-800" to="/cara-kerja">Cara Kerja</Link></li>
-              <li><Link className="hover:text-moss-800" to="/tentang">Tentang Ambil Bagian</Link></li>
+              <li><Link className="hover:text-brand-800" to="/kebutuhan">Daftar Kebutuhan</Link></li>
+              <li><Link className="hover:text-brand-800" to="/peta">Peta Kebutuhan</Link></li>
+              <li><Link className="hover:text-brand-800" to="/cara-kerja">Cara Kerja</Link></li>
+              <li><Link className="hover:text-brand-800" to="/tentang">Tentang Ambil Bagian</Link></li>
             </ul>
           </div>
           <div>
@@ -134,7 +136,7 @@ export default function PublicLayout() {
             <p className="eyebrow">Internal</p>
             <ul className="mt-3 space-y-2 text-sm text-sand-700">
               <li>
-                <Link className="inline-flex items-center gap-1 hover:text-moss-800" to="/operations">
+                <Link className="inline-flex items-center gap-1 hover:text-brand-800" to="/operations">
                   Ambil Bagian — Operations
                   <MapPinned size={13} />
                 </Link>

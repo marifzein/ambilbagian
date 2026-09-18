@@ -94,7 +94,7 @@ export default function ContributeModal({ need, open, onClose }) {
                         }}
                         className={`tnum rounded-xl border px-2 py-2.5 text-sm font-bold transition-all ${
                           !custom && amount === n
-                            ? 'border-moss-700 bg-moss-700/10 text-moss-800'
+                            ? 'border-brand-700 bg-brand-700/10 text-brand-800'
                             : 'border-sand-200 text-sand-700 hover:border-sand-300'
                         }`}
                       >
@@ -106,11 +106,11 @@ export default function ContributeModal({ need, open, onClose }) {
                       onChange={(e) => setCustom(e.target.value.replace(/[^\d]/g, ''))}
                       placeholder="Nominal lain"
                       inputMode="numeric"
-                      className="tnum col-span-3 w-full rounded-xl border border-sand-200 px-4 py-2.5 text-sm font-semibold text-sand-900 placeholder:font-normal placeholder:text-sand-400 focus:border-moss-600 focus:outline-none focus:ring-2 focus:ring-moss-600/15"
+                      className="tnum col-span-3 w-full rounded-xl border border-sand-200 px-4 py-2.5 text-sm font-semibold text-sand-900 placeholder:font-normal placeholder:text-sand-400 focus:border-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-600/15"
                     />
                   </div>
 
-                  <button onClick={submit} className="btn-ember btn-lg mt-5 w-full">
+                  <button onClick={submit} className="btn-primary btn-lg mt-5 w-full">
                     <HeartHandshake size={18} />
                     Ambil Bagian {custom ? `· ${rupiah(parseInt(custom, 10) || 0)}` : `· ${rupiah(amount)}`}
                   </button>
@@ -126,7 +126,7 @@ export default function ContributeModal({ need, open, onClose }) {
                   initial={{ scale: 0.6, rotate: -8 }}
                   animate={{ scale: 1, rotate: 0 }}
                   transition={{ type: 'spring', stiffness: 260, damping: 14 }}
-                  className="grid h-16 w-16 place-items-center rounded-full bg-moss-100 text-moss-700"
+                  className="grid h-16 w-16 place-items-center rounded-full bg-brand-100 text-brand-700"
                 >
                   <PartyPopper size={28} />
                 </motion.span>

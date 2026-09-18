@@ -4,19 +4,47 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Warm green — brand utama. Hangat, terpercaya, bukan "aplikasi perbankan".
+        // Brand utama — biru dari logo "ambilbagian" (#3d7be9). Dominan.
+        brand: {
+          50: '#eef4fe',
+          100: '#d9e5fd',
+          200: '#b3cbfb',
+          300: '#84aaf8',
+          400: '#5b8df2',
+          500: '#3d7be9',
+          600: '#2f66d4',
+          700: '#2854af',
+          800: '#24478c',
+          900: '#203a6e',
+          950: '#16243d',
+        },
+        // Sekunder — hijau segar dari logo (#16a34a) untuk progress, status, positif.
         moss: {
-          50: '#f2f7f0',
-          100: '#e0ecda',
-          200: '#c2d9b8',
-          300: '#9bc08c',
-          400: '#72a35f',
-          500: '#54873f',
-          600: '#406c2d',
-          700: '#355626',
-          800: '#2c4521',
-          900: '#25391d',
-          950: '#12210d',
+          50: '#f0fdf4',
+          100: '#dcfce7',
+          200: '#bbf7d0',
+          300: '#86efac',
+          400: '#4ade80',
+          500: '#22c55e',
+          600: '#16a34a',
+          700: '#15803d',
+          800: '#166534',
+          900: '#14532d',
+          950: '#052e16',
+        },
+        // Aksen — merah-oranye dari logo (#e8480f), dipakai hemat untuk CTA & highlight.
+        ember: {
+          50: '#fef3ee',
+          100: '#fee3d4',
+          200: '#fec4a8',
+          300: '#fd9d71',
+          400: '#fb7238',
+          500: '#e8480f',
+          600: '#d13c08',
+          700: '#ae3108',
+          800: '#8b2a0d',
+          900: '#71260e',
+          950: '#3e1105',
         },
         // Netral hangat
         sand: {
@@ -31,20 +59,6 @@ export default {
           800: '#574535',
           900: '#46392e',
           950: '#261e18',
-        },
-        // Aksen CTA — terracotta hangat
-        ember: {
-          50: '#fdf5f2',
-          100: '#fbe8e0',
-          200: '#f6cfc0',
-          300: '#eeab92',
-          400: '#e48160',
-          500: '#d95f38',
-          600: '#c54b24',
-          700: '#a43c1e',
-          800: '#83331f',
-          900: '#6b2c1f',
-          950: '#3a140d',
         },
       },
       fontFamily: {

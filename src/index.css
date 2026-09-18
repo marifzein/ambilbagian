@@ -18,7 +18,7 @@
   }
 
   ::selection {
-    @apply bg-moss-600 text-white;
+    @apply bg-brand-600 text-white;
   }
 
   /* Angka tabular agar progress & rupiah rapi saat beranimasi */
@@ -33,15 +33,12 @@
   }
 
   .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-moss-600 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
+    @apply inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
   }
 
+  /* CTA primer = biru dominan dari logo */
   .btn-primary {
-    @apply btn bg-moss-700 px-5 py-2.5 text-sm text-white shadow-soft hover:bg-moss-800 active:scale-[0.98];
-  }
-
-  .btn-ember {
-    @apply btn bg-ember-600 px-5 py-2.5 text-sm text-white shadow-soft hover:bg-ember-700 active:scale-[0.98];
+    @apply btn bg-brand-600 px-5 py-2.5 text-sm text-white shadow-soft hover:bg-brand-700 active:scale-[0.98];
   }
 
   .btn-ghost {
@@ -53,7 +50,7 @@
   }
 
   .eyebrow {
-    @apply text-[11px] font-bold uppercase tracking-[0.18em] text-moss-700;
+    @apply text-[11px] font-bold uppercase tracking-[0.18em] text-brand-700;
   }
 
   .card {
@@ -90,13 +87,13 @@
 .marker-cluster-small,
 .marker-cluster-medium,
 .marker-cluster-large {
-  background-color: rgba(53, 86, 38, 0.18);
+  background-color: rgba(47, 102, 212, 0.16);
 }
 
 .marker-cluster-small div,
 .marker-cluster-medium div,
 .marker-cluster-large div {
-  background-color: #355626;
+  background-color: #2f66d4;
   color: #fff;
   font-weight: 700;
   font-family: inherit;

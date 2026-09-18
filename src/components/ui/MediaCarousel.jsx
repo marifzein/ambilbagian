@@ -76,7 +76,7 @@ export default function MediaCarousel({ media, className = '', aspect = 'aspect-
               onClick={() => setIndex(i)}
               aria-label={`Media ${i + 1}`}
               className={`relative h-14 w-20 shrink-0 overflow-hidden rounded-lg border-2 transition-all ${
-                i === index ? 'border-moss-600 opacity-100' : 'border-transparent opacity-60 hover:opacity-90'
+                i === index ? 'border-brand-600 opacity-100' : 'border-transparent opacity-60 hover:opacity-90'
               }`}
             >
               <img src={item.url} alt="" loading="lazy" className="h-full w-full object-cover" />

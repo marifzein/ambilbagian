@@ -28,7 +28,7 @@ export default function AdminParticipation() {
           { icon: Calculator, label: 'Rata-rata nominal', value: rupiah(p.avgAmount) },
         ].map((k) => (
           <div key={k.label} className="card p-5">
-            <span className="grid h-10 w-10 place-items-center rounded-xl bg-moss-700/10 text-moss-800">
+            <span className="grid h-10 w-10 place-items-center rounded-xl bg-brand-700/10 text-brand-800">
               <k.icon size={18} />
             </span>
             <p className="tnum mt-3 font-display text-2xl font-semibold text-sand-950">{k.value}</p>
@@ -81,7 +81,7 @@ export default function AdminParticipation() {
                     whileInView={{ height: `${(v / maxTrend) * 100}%` }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.7, delay: i * 0.05 }}
-                    className="w-full max-w-[30px] rounded-t-md bg-moss-600"
+                    className="w-full max-w-[30px] rounded-t-md bg-brand-600"
                     title={`${formatID(v)} partisipasi`}
                   />
                   <span className="tnum text-[10px] font-bold text-sand-400">{formatID(v)}</span>
@@ -95,13 +95,13 @@ export default function AdminParticipation() {
             <ul className="mt-4 divide-y divide-sand-100">
               {p.recent.map((r, i) => (
                 <li key={i} className="flex items-center gap-3 py-2.5 first:pt-0 last:pb-0">
-                  <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-moss-100 text-[11px] font-bold text-moss-800">
+                  <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-brand-100 text-[11px] font-bold text-brand-800">
                     {r.initials}
                   </span>
                   <div className="min-w-0 flex-1">
                     <p className="text-sm font-bold text-sand-900">
                       {r.initials} · {r.city}{' '}
-                      <span className="tnum font-semibold text-moss-700">+{rupiah(r.amount)}</span>
+                      <span className="tnum font-semibold text-brand-700">+{rupiah(r.amount)}</span>
                     </p>
                     <p className="tnum text-[11px] text-sand-500">
                       {r.need} · {r.at}

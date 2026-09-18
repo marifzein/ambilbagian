@@ -45,7 +45,7 @@ export default function HowItWorksPage() {
               transition={{ duration: 0.45, delay: (i % 2) * 0.06 }}
               className="flex gap-4 rounded-2xl border border-sand-200/80 bg-white p-5 shadow-soft"
             >
-              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-moss-700/10 text-moss-800">
+              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-brand-700/10 text-brand-800">
                 <s.icon size={20} />
               </span>
               <div>
@@ -79,7 +79,7 @@ export default function HowItWorksPage() {
                 'Dokumentasi dan pelaporan yang bisa dipertanggungjawabkan',
               ].map((item) => (
                 <li key={item} className="flex items-start gap-2.5 text-sm font-semibold text-sand-800">
-                  <BadgeCheck size={17} className="mt-0.5 shrink-0 text-moss-600" />
+                  <BadgeCheck size={17} className="mt-0.5 shrink-0 text-brand-600" />
                   {item}
                 </li>
               ))}
@@ -105,7 +105,7 @@ export default function HowItWorksPage() {
               </div>
               <div className="flex items-center justify-between gap-4">
                 <span className="text-sand-500">Status</span>
-                <span className="font-bold text-moss-700">Distribusi tahap 1 selesai</span>
+                <span className="font-bold text-brand-700">Distribusi tahap 1 selesai</span>
               </div>
               <div className="flex items-center justify-between gap-4 border-t border-dashed border-sand-200 pt-4">
                 <span className="text-sand-500">Biaya operasional</span>
@@ -141,7 +141,7 @@ export default function HowItWorksPage() {
             },
           ].map((c) => (
             <div key={c.title} className="rounded-2xl border border-sand-200/80 bg-white p-6 shadow-soft">
-              <span className="grid h-11 w-11 place-items-center rounded-xl bg-moss-700/10 text-moss-800">
+              <span className="grid h-11 w-11 place-items-center rounded-xl bg-brand-700/10 text-brand-800">
                 <c.icon size={20} />
               </span>
               <h3 className="mt-4 font-display text-lg font-semibold text-sand-950">{c.title}</h3>
@@ -152,7 +152,7 @@ export default function HowItWorksPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-moss-900">
+      <section className="bg-brand-900">
         <div className="container-app flex flex-col items-start justify-between gap-6 py-14 md:flex-row md:items-center">
           <div>
             <h2 className="font-display text-3xl font-semibold text-white md:text-4xl">
@@ -164,7 +164,7 @@ export default function HowItWorksPage() {
             <Link to="/kebutuhan" className="btn-lg btn border border-white/25 bg-white/10 text-white hover:bg-white/20">
               Lihat Kebutuhan
             </Link>
-            <Link to="/peta" className="btn-lg btn-ember">
+            <Link to="/peta" className="btn-lg btn-primary">
               <HandHeart size={17} /> Buka Peta
             </Link>
           </div>

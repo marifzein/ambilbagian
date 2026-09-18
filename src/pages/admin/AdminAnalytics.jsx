@@ -93,7 +93,7 @@ export default function AdminAnalytics() {
         <div className="card p-6">
           <div className="flex items-center justify-between">
             <h2 className="font-display text-lg font-semibold text-sand-950">Kebutuhan masuk & selesai per minggu</h2>
-            <span className="inline-flex items-center gap-1.5 text-xs font-bold text-moss-700">
+            <span className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-700">
               <TrendingUp size={14} /> +21% 4 minggu
             </span>
           </div>
@@ -106,7 +106,7 @@ export default function AdminAnalytics() {
                     whileInView={{ height: `${(weeklyIncoming[i] / maxWeek) * 100}%` }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.7, delay: i * 0.05 }}
-                    className="w-1/2 max-w-[26px] rounded-t-md bg-moss-500"
+                    className="w-1/2 max-w-[26px] rounded-t-md bg-brand-500"
                     title={`Masuk: ${weeklyIncoming[i]}`}
                   />
                   <motion.div
@@ -114,7 +114,7 @@ export default function AdminAnalytics() {
                     whileInView={{ height: `${(weeklyCompleted[i] / maxWeek) * 100}%` }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.7, delay: 0.1 + i * 0.05 }}
-                    className="w-1/2 max-w-[26px] rounded-t-md bg-ember-400"
+                    className="w-1/2 max-w-[26px] rounded-t-md bg-moss-500"
                     title={`Selesai: ${weeklyCompleted[i]}`}
                   />
                 </div>
@@ -124,10 +124,10 @@ export default function AdminAnalytics() {
           </div>
           <div className="mt-4 flex items-center gap-5 border-t border-sand-100 pt-4 text-xs font-bold text-sand-600">
             <span className="inline-flex items-center gap-1.5">
-              <span className="h-2.5 w-2.5 rounded-sm bg-moss-500" /> Masuk
+              <span className="h-2.5 w-2.5 rounded-sm bg-brand-500" /> Masuk
             </span>
             <span className="inline-flex items-center gap-1.5">
-              <span className="h-2.5 w-2.5 rounded-sm bg-ember-400" /> Selesai
+              <span className="h-2.5 w-2.5 rounded-sm bg-moss-500" /> Selesai
             </span>
           </div>
         </div>
@@ -150,7 +150,7 @@ export default function AdminAnalytics() {
                 <p className="text-[10px] font-bold text-sand-500">Hari terlama</p>
               </div>
             </div>
-            <p className="mt-4 flex items-start gap-2 rounded-xl bg-moss-50 p-3 text-[11px] leading-relaxed text-moss-900">
+            <p className="mt-4 flex items-start gap-2 rounded-xl bg-brand-50 p-3 text-[11px] leading-relaxed text-brand-900">
               <Timer size={14} className="mt-0.5 shrink-0" />
               Kebutuhan yang hampir terpenuhi biasanya selesai dalam ≤ 7 hari setelah mencapai 80%.
             </p>
@@ -160,14 +160,14 @@ export default function AdminAnalytics() {
           <div className="grid gap-5 md:grid-cols-2">
             <div className="card p-5">
               <h3 className="flex items-center gap-2 text-sm font-bold text-sand-950">
-                <Search size={15} className="text-moss-700" /> Paling banyak dicari
+                <Search size={15} className="text-brand-700" /> Paling banyak dicari
               </h3>
               <ul className="mt-3 space-y-2.5">
                 {needsSearched.map((row) => {
                   const n = needById(row.id)
                   return (
                     <li key={row.id} className="flex items-center justify-between gap-2 text-xs">
-                      <Link to={`/operations/kebutuhan/${row.id}`} className="min-w-0 truncate font-semibold text-sand-700 hover:text-moss-800">
+                      <Link to={`/operations/kebutuhan/${row.id}`} className="min-w-0 truncate font-semibold text-sand-700 hover:text-brand-800">
                         {n?.title || row.id}
                       </Link>
                       <span className="tnum shrink-0 font-bold text-sand-500">{row.count}</span>
@@ -183,7 +183,7 @@ export default function AdminAnalytics() {
               <ul className="mt-3 space-y-2.5">
                 {needsSupported.map((row) => (
                   <li key={row.id} className="flex items-center justify-between gap-2 text-xs">
-                    <Link to={`/operations/kebutuhan/${row.id}`} className="min-w-0 truncate font-semibold text-sand-700 hover:text-moss-800">
+                    <Link to={`/operations/kebutuhan/${row.id}`} className="min-w-0 truncate font-semibold text-sand-700 hover:text-brand-800">
                       {needById(row.id)?.title || row.id}
                     </Link>
                     <span className="tnum shrink-0 font-bold text-sand-500">{row.count}</span>
@@ -199,7 +199,7 @@ export default function AdminAnalytics() {
         {/* Wilayah */}
         <div className="card p-6">
           <h2 className="flex items-center gap-2 font-display text-lg font-semibold text-sand-950">
-            <MapPinned size={17} className="text-moss-700" /> Wilayah dengan kebutuhan terbanyak
+            <MapPinned size={17} className="text-brand-700" /> Wilayah dengan kebutuhan terbanyak
           </h2>
           <div className="mt-5 space-y-3.5">
             {byRegion.map(([region, count]) => (
@@ -214,7 +214,7 @@ export default function AdminAnalytics() {
                     whileInView={{ width: `${(count / maxRegion) * 100}%` }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.7 }}
-                    className="h-full rounded-full bg-moss-600"
+                    className="h-full rounded-full bg-brand-600"
                   />
                 </div>
               </div>
@@ -229,9 +229,9 @@ export default function AdminAnalytics() {
             <ul className="mt-4 divide-y divide-sand-100">
               {almostDone.map((n) => (
                 <li key={n.id}>
-                  <Link to={`/operations/kebutuhan/${n.id}`} className="flex items-center justify-between gap-3 py-2.5 text-xs first:pt-0 last:pb-0 hover:[&_span.t]:text-moss-800">
+                  <Link to={`/operations/kebutuhan/${n.id}`} className="flex items-center justify-between gap-3 py-2.5 text-xs first:pt-0 last:pb-0 hover:[&_span.t]:text-brand-800">
                     <span className="t min-w-0 flex-1 truncate font-semibold text-sand-700">{n.title}</span>
-                    <span className="tnum shrink-0 rounded-full bg-moss-100 px-2 py-0.5 font-bold text-moss-800">
+                    <span className="tnum shrink-0 rounded-full bg-brand-100 px-2 py-0.5 font-bold text-brand-800">
                       {pct(n.collected, n.target)}%
                     </span>
                   </Link>

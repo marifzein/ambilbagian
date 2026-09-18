@@ -5,7 +5,8 @@ export default function Progress({ collected, target, tone = 'moss', size = 'md'
   const percent = Math.min(100, pct(collected, target))
   const height = size === 'sm' ? 'h-1.5' : size === 'lg' ? 'h-3.5' : 'h-2.5'
   const tones = {
-    moss: 'bg-moss-600',
+    moss: 'bg-moss-600', // progress = hijau (warna sekunder)
+    brand: 'bg-brand-600',
     ember: 'bg-ember-500',
     sky: 'bg-sky-600',
     sand: 'bg-sand-400',

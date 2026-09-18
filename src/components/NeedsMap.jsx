@@ -80,10 +80,10 @@ export default function NeedsMap({ items, height = 'h-[460px]', center = [-7.1, 
             <p style="margin:4px 0 2px;font-size:13px;font-weight:800;line-height:1.35;color:#261e18">${n.title}</p>
             <p style="margin:0;font-size:11px;color:#715a41">${n.location.village}, ${n.location.regency}</p>
             <div style="margin-top:8px;height:6px;border-radius:99px;background:#e6dfd0;overflow:hidden">
-              <div style="height:100%;width:${percent}%;border-radius:99px;background:#54873f"></div>
+              <div style="height:100%;width:${percent}%;border-radius:99px;background:#16a34a"></div>
             </div>
             <p style="margin:6px 0 0;font-size:11px;font-weight:700;color:#46392e">${remainingText}</p>
-            <a href="${detailBase}/${n.id}" data-detail style="margin-top:9px;display:block;text-align:center;background:#355626;color:#fff;font-size:12px;font-weight:800;padding:8px 10px;border-radius:99px;text-decoration:none">Lihat Detail</a>
+            <a href="${detailBase}/${n.id}" data-detail style="margin-top:9px;display:block;text-align:center;background:#2f66d4;color:#fff;font-size:12px;font-weight:800;padding:8px 10px;border-radius:99px;text-decoration:none">Lihat Detail</a>
           </div>
         </div>`
       )

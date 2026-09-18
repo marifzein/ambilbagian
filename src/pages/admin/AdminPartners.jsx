@@ -17,7 +17,7 @@ export default function AdminPartners() {
           <div key={p.id} className="card flex flex-col p-5">
             <div className="flex items-start justify-between gap-3">
               <div className="flex items-start gap-3">
-                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-moss-700/10 text-moss-800">
+                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-brand-700/10 text-brand-800">
                   <Handshake size={20} />
                 </span>
                 <div>
@@ -29,7 +29,7 @@ export default function AdminPartners() {
               </div>
               <span
                 className={`shrink-0 rounded-full px-2.5 py-1 text-[10px] font-bold ${
-                  p.active ? 'bg-moss-100 text-moss-800' : 'bg-sand-100 text-sand-500'
+                  p.active ? 'bg-brand-100 text-brand-800' : 'bg-sand-100 text-sand-500'
                 }`}
               >
                 {p.active ? 'Aktif' : 'Nonaktif'}
@@ -54,12 +54,12 @@ export default function AdminPartners() {
             <div className="mt-4 space-y-2.5 text-xs">
               <div className="flex items-center justify-between">
                 <span className="flex items-center gap-1.5 font-semibold text-sand-600">
-                  <FileCheck2 size={13} className="text-moss-600" /> Kepatuhan laporan
+                  <FileCheck2 size={13} className="text-brand-600" /> Kepatuhan laporan
                 </span>
                 <span className="tnum font-bold text-sand-950">{p.reportCompliance}%</span>
               </div>
               <div className="h-1.5 overflow-hidden rounded-full bg-sand-100">
-                <div className="h-full rounded-full bg-moss-600" style={{ width: `${p.reportCompliance}%` }} />
+                <div className="h-full rounded-full bg-brand-600" style={{ width: `${p.reportCompliance}%` }} />
               </div>
               <div className="flex items-center justify-between">
                 <span className="flex items-center gap-1.5 font-semibold text-sand-600">

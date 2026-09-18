@@ -101,7 +101,7 @@ export default function NeedDetailPage() {
           <section className="mt-10">
             <h2 className="font-display text-2xl font-semibold text-sand-950">Kenapa kebutuhan ini ada?</h2>
             <p className="mt-3 leading-relaxed text-sand-700">{need.why}</p>
-            <p className="mt-4 rounded-2xl border border-moss-200 bg-moss-50 p-4 text-sm leading-relaxed text-moss-900">
+            <p className="mt-4 rounded-2xl border border-brand-200 bg-brand-50 p-4 text-sm leading-relaxed text-brand-900">
               <strong className="font-bold">Yang sedang dibutuhkan:</strong> {need.neededNow || 'Tidak ada — kebutuhan sudah terpenuhi.'}
             </p>
           </section>
@@ -118,12 +118,12 @@ export default function NeedDetailPage() {
                   <li key={stage.id} className="relative flex gap-4 pb-7 last:pb-0">
                     {!isLast && (
                       <span
-                        className={`absolute left-[13px] top-7 h-full w-0.5 ${isDone ? 'bg-moss-500' : 'bg-sand-200'}`}
+                        className={`absolute left-[13px] top-7 h-full w-0.5 ${isDone ? 'bg-brand-500' : 'bg-sand-200'}`}
                       />
                     )}
                     <span
                       className={`relative z-10 mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-full border-2 ${
-                        isDone ? 'border-moss-600 bg-moss-600 text-white' : 'border-sand-300 bg-white text-sand-400'
+                        isDone ? 'border-brand-600 bg-brand-600 text-white' : 'border-sand-300 bg-white text-sand-400'
                       }`}
                     >
                       {isDone ? <BadgeCheck size={15} /> : <span className="h-1.5 w-1.5 rounded-full bg-current" />}
@@ -192,7 +192,7 @@ export default function NeedDetailPage() {
             <div className="mt-3">
               <Progress collected={need.collected} target={need.target} size="lg" tone={done ? 'sand' : 'moss'} />
             </div>
-            <p className="tnum mt-2 text-sm font-bold text-moss-700">{percent}% terpenuhi</p>
+            <p className="tnum mt-2 text-sm font-bold text-brand-700">{percent}% terpenuhi</p>
 
             {done ? (
               <p className="mt-4 rounded-xl bg-sand-100 p-3 text-center text-sm font-bold text-sand-700">
@@ -206,7 +206,7 @@ export default function NeedDetailPage() {
                     {need.unit === 'Rp' ? rupiah(remaining) : `${formatID(remaining)} ${need.unit}`}
                   </span>
                 </p>
-                <button onClick={() => setModalOpen(true)} className="btn-ember btn-lg mt-4 w-full">
+                <button onClick={() => setModalOpen(true)} className="btn-primary btn-lg mt-4 w-full">
                   <HandHeart size={18} />
                   Ambil Bagian
                 </button>
@@ -247,7 +247,7 @@ export default function NeedDetailPage() {
             <div className="card mt-5 p-6">
               <p className="eyebrow">Mitra pelaksana</p>
               <div className="mt-3 flex items-start gap-3">
-                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-moss-100 text-moss-800">
+                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-brand-100 text-brand-800">
                   <Users size={20} />
                 </span>
                 <div>
@@ -256,7 +256,7 @@ export default function NeedDetailPage() {
                     {partner.type} · {partner.region}
                   </p>
                   {need.execution && (
-                    <p className="mt-2 flex items-center gap-1.5 text-xs font-semibold text-moss-700">
+                    <p className="mt-2 flex items-center gap-1.5 text-xs font-semibold text-brand-700">
                       <Clock3 size={13} /> {need.execution.progressLabel} · ETA {need.execution.etaDays} hari
                     </p>
                   )}

@@ -13,7 +13,7 @@ export default function AboutPage() {
             <h1 className="mt-3 font-display text-4xl font-semibold leading-[1.12] tracking-tight text-sand-950 md:text-5xl">
               "Kamu nggak harus bantu semuanya.
               <br />
-              <span className="text-moss-700">Cukup ambil bagian."</span>
+              <span className="text-brand-700">Cukup ambil bagian."</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-sand-600">
               Banyak orang ingin membantu tapi merasa bantuannya terlalu kecil. Padahal kebutuhan nyata di sekitar kita
@@ -25,7 +25,7 @@ export default function AboutPage() {
               dan bukti yang terbuka.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link to="/kebutuhan" className="btn-ember btn-lg">
+              <Link to="/kebutuhan" className="btn-primary btn-lg">
                 Mulai dari peta kebutuhan <ArrowRight size={16} />
               </Link>
               <Link to="/cara-kerja" className="btn-ghost btn-lg">
@@ -33,8 +33,8 @@ export default function AboutPage() {
               </Link>
             </div>
           </div>
-          <div className="rounded-3xl bg-moss-900 p-8">
-            <HandHeart size={30} className="text-moss-200" />
+          <div className="rounded-3xl bg-brand-900 p-8">
+            <HandHeart size={30} className="text-brand-200" />
             <p className="mt-4 font-display text-2xl font-semibold leading-snug text-white">
               "Berapa pun yang kamu bisa bantu, itu sangat berarti."
             </p>
@@ -71,7 +71,7 @@ export default function AboutPage() {
             },
           ].map((p) => (
             <div key={p.title} className="rounded-2xl border border-sand-200/80 bg-white p-6 shadow-soft">
-              <span className="grid h-11 w-11 place-items-center rounded-xl bg-moss-700/10 text-moss-800">
+              <span className="grid h-11 w-11 place-items-center rounded-xl bg-brand-700/10 text-brand-800">
                 <p.icon size={20} />
               </span>
               <h3 className="mt-4 font-display text-lg font-semibold text-sand-950">{p.title}</h3>
@@ -86,7 +86,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-moss-900">
+      <section className="bg-brand-900">
         <div className="container-app py-14 text-center md:py-16">
           <h2 className="font-display text-3xl font-semibold text-white md:text-4xl">
             Kamu juga bisa ambil bagian!
@@ -94,7 +94,7 @@ export default function AboutPage() {
           <p className="mx-auto mt-3 max-w-md text-sand-200">
             Mulai dari yang paling kecil. Seperti yang selalu kami bilang — berapa pun yang kamu bisa bantu, itu sangat berarti.
           </p>
-          <Link to="/kebutuhan" className="btn-ember btn-lg mt-7">
+          <Link to="/kebutuhan" className="btn-primary btn-lg mt-7">
             Lihat Kebutuhan Sekarang
           </Link>
         </div>
