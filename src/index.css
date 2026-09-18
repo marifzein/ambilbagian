@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-sand-50 font-sans text-sand-950;
+  }
+
+  ::selection {
+    @apply bg-moss-600 text-white;
+  }
+
+  /* Angka tabular agar progress & rupiah rapi saat beranimasi */
+  .tnum {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@layer components {
+  .container-app {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-moss-600 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
+  }
+
+  .btn-primary {
+    @apply btn bg-moss-700 px-5 py-2.5 text-sm text-white shadow-soft hover:bg-moss-800 active:scale-[0.98];
+  }
+
+  .btn-ember {
+    @apply btn bg-ember-600 px-5 py-2.5 text-sm text-white shadow-soft hover:bg-ember-700 active:scale-[0.98];
+  }
+
+  .btn-ghost {
+    @apply btn border border-sand-200 bg-white/70 px-5 py-2.5 text-sm text-sand-900 hover:border-sand-300 hover:bg-white;
+  }
+
+  .btn-lg {
+    @apply px-6 py-3 text-base;
+  }
+
+  .eyebrow {
+    @apply text-[11px] font-bold uppercase tracking-[0.18em] text-moss-700;
+  }
+
+  .card {
+    @apply rounded-2xl border border-sand-200/80 bg-white shadow-soft;
+  }
+}
+
+/* ---------- Leaflet tuning agar menyatu dengan tema ---------- */
+.leaflet-container {
+  font-family: inherit;
+  background: #eceadf;
+  z-index: 0;
+}
+
+.leaflet-bar,
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  box-shadow: 0 2px 4px rgba(38, 30, 24, 0.06), 0 12px 32px -8px rgba(38, 30, 24, 0.18);
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 14px;
+}
+
+.leaflet-popup-content {
+  margin: 0;
+  width: 248px !important;
+}
+
+.leaflet-bar a {
+  color: #46392e;
+}
+
+.marker-cluster-small,
+.marker-cluster-medium,
+.marker-cluster-large {
+  background-color: rgba(53, 86, 38, 0.18);
+}
+
+.marker-cluster-small div,
+.marker-cluster-medium div,
+.marker-cluster-large div {
+  background-color: #355626;
+  color: #fff;
+  font-weight: 700;
+  font-family: inherit;
+}
+
+/* Scrollbar halus untuk filter chips & sidebar */
+.nice-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #d3c7ae transparent;
+}
+
+.nice-scroll::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+
+.nice-scroll::-webkit-scrollbar-thumb {
+  background: #d3c7ae;
+  border-radius: 999px;
+}
