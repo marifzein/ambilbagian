@@ -12,6 +12,9 @@ import {
   Handshake,
   ShieldCheck,
   Receipt,
+  BellRing,
+  CalendarClock,
+  ArrowLeftRight,
 } from 'lucide-react'
 import SectionHeading from '../components/SectionHeading.jsx'
 import { partners } from '../data/partners'
@@ -57,6 +60,62 @@ export default function HowItWorksPage() {
               </div>
             </motion.div>
           ))}
+        </div>
+      </section>
+
+      {/* Siklus pendanaan & mitra distributor */}
+      <section className="border-y border-sand-200/70 bg-white">
+        <div className="container-app py-14 md:py-16">
+          <SectionHeading eyebrow="Siklus pendanaan" title="Pengajuan diverifikasi, mitra mengambil, donasi mengalir">
+            Platform mempertemukan pengajuan dengan mitra distributor yang siap mengeksekusi. Pendanaan punya batas
+            waktu dan aturan yang jelas, sehingga dana tidak mengendap.
+          </SectionHeading>
+          <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            {[
+              {
+                icon: BellRing,
+                title: 'Mitra dinotifikasi',
+                text: 'Pengajuan yang lolos verifikasi dikirim ke mitra distributor — Lazismu, MDMC, PeduliMuslim, dan lainnya — lewat email, WhatsApp, atau telepon.',
+              },
+              {
+                icon: Handshake,
+                title: 'Donasi dibuka',
+                text: 'Begitu ada mitra yang mengambil, kebutuhan tayang publik dan donasi dibuka dengan progress serta jatuh tempo yang jelas.',
+              },
+              {
+                icon: CalendarClock,
+                title: 'Jatuh tempo → transfer',
+                text: 'Saat tenggat tercapai, dana bantuan dikirim/ditransfer ke mitra distributor untuk difokuskan ke pengadaan dan distribusi.',
+              },
+              {
+                icon: ArrowLeftRight,
+                title: 'Kurang dari 10%?',
+                text: 'Donatur ditawari lewat email/pesan/WA: alihkan dukungannya ke kebutuhan lain, atau ikut menutup kekurangan terakhir.',
+              },
+            ].map((c, i) => (
+              <motion.div
+                key={c.title}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ duration: 0.45, delay: i * 0.06 }}
+                className="rounded-2xl border border-sand-200/80 bg-sand-50/60 p-5"
+              >
+                <div className="flex items-center gap-3">
+                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-brand-700/10 text-brand-800">
+                    <c.icon size={20} />
+                  </span>
+                  <span className="tnum font-display text-lg font-semibold text-sand-300">{String(i + 1).padStart(2, '0')}</span>
+                </div>
+                <h3 className="mt-3 font-bold text-sand-950">{c.title}</h3>
+                <p className="mt-1.5 text-sm leading-relaxed text-sand-600">{c.text}</p>
+              </motion.div>
+            ))}
+          </div>
+          <p className="mt-6 rounded-2xl border border-sand-200 bg-sand-100/70 p-4 text-xs leading-relaxed text-sand-600">
+            Nama mitra distributor pada prototype ini adalah <strong>contoh</strong> — bukan afiliasi resmi. Kebijakan
+            persentase biaya operasional tidak ditetapkan platform; setiap laporan menampilkan rinciannya sendiri.
+          </p>
         </div>
       </section>
 

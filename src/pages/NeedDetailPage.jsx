@@ -10,10 +10,11 @@ import {
   ArrowRight,
   Users,
   Clock3,
+  CalendarClock,
 } from 'lucide-react'
 import { useApp } from '../store/AppContext.jsx'
 import { categoryById, statusMeta, priorityMeta } from '../data/categories'
-import { partnerById } from '../data/partners'
+import { partnerById, fundingCycles } from '../data/partners'
 import MediaCarousel from '../components/ui/MediaCarousel.jsx'
 import Progress from '../components/ui/Progress.jsx'
 import ContributeModal from '../components/ContributeModal.jsx'
@@ -52,6 +53,7 @@ export default function NeedDetailPage() {
   const doneCount = need.timeline.filter((t) => t.date).length
   const cost = need.operationalCost
   const done = need.status === 'selesai'
+  const deadline = fundingCycles[need.id]?.deadline
 
   return (
     <div>
@@ -206,6 +208,12 @@ export default function NeedDetailPage() {
                     {need.unit === 'Rp' ? rupiah(remaining) : `${formatID(remaining)} ${need.unit}`}
                   </span>
                 </p>
+                {deadline && (
+                  <p className="tnum mt-2.5 flex items-center gap-1.5 rounded-xl bg-amber-50 px-3 py-2 text-xs font-bold text-amber-800">
+                    <CalendarClock size={14} className="shrink-0" />
+                    Jatuh tempo penggalangan: {formatDate(deadline)}
+                  </p>
+                )}
                 <button onClick={() => setModalOpen(true)} className="btn-primary btn-lg mt-4 w-full">
                   <HandHeart size={18} />
                   Ambil Bagian
@@ -241,6 +249,24 @@ export default function NeedDetailPage() {
               </p>
             </div>
           ) : null}
+
+          {/* Catatan siklus pendanaan */}
+          {deadline && !done && (
+            <div className="card mt-5 p-6">
+              <p className="eyebrow">Setelah jatuh tempo</p>
+              <ul className="mt-3 space-y-2.5 text-xs leading-relaxed text-sand-600">
+                <li className="flex items-start gap-2">
+                  <BadgeCheck size={14} className="mt-0.5 shrink-0 text-brand-600" />
+                  Dana terkumpul ditransfer ke mitra distributor untuk pengadaan & distribusi.
+                </li>
+                <li className="flex items-start gap-2">
+                  <BadgeCheck size={14} className="mt-0.5 shrink-0 text-brand-600" />
+                  Jika terkumpul kurang dari 10% dari target, donatur ditawari lewat email/pesan/WA untuk
+                  mengalihkan dukungannya ke kebutuhan lain.
+                </li>
+              </ul>
+            </div>
+          )}
 
           {/* Mitra */}
           {partner && (

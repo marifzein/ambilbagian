@@ -1,22 +1,22 @@
-import { Link } from 'react-router-dom'
-import { MapPin, ArrowRight } from 'lucide-react'
-import { categoryById, statusMeta } from '../data/categories'
-import { pct } from '../utils/format'
-import Progress from './ui/Progress.jsx'
+import { Link } from "react-router-dom";
+import { MapPin, ArrowRight } from "lucide-react";
+import { categoryById, statusMeta } from "../data/categories";
+import { pct } from "../utils/format";
+import Progress from "./ui/Progress.jsx";
 
-export default function NeedCard({ need, layout = 'vertical' }) {
-  const cat = categoryById(need.category)
-  const percent = pct(need.collected, need.target)
-  const status = statusMeta[need.status]
-  const Icon = cat.icon
+export default function NeedCard({ need, layout = "vertical" }) {
+  const cat = categoryById(need.category);
+  const percent = pct(need.collected, need.target);
+  const status = statusMeta[need.status];
+  const Icon = cat.icon;
   const remaining =
-    need.status === 'selesai'
-      ? 'Kebutuhan terpenuhi'
-      : need.unit === 'Rp'
-        ? `Kurang ${(need.target - need.collected).toLocaleString('id-ID')}`
-        : `Kurang ${need.target - need.collected} ${need.unit}`
+    need.status === "selesai"
+      ? "Kebutuhan terpenuhi"
+      : need.unit === "Rp"
+        ? `Kurang ${(need.target - need.collected).toLocaleString("id-ID")}`
+        : `Kurang ${need.target - need.collected} ${need.unit}`;
 
-  if (layout === 'horizontal') {
+  if (layout === "horizontal") {
     return (
       <Link
         to={`/kebutuhan/${need.id}`}
@@ -42,7 +42,9 @@ export default function NeedCard({ need, layout = 'vertical' }) {
               {cat.name}
             </span>
             {status && (
-              <span className={`rounded-full border px-2 py-0.5 text-[10px] font-bold ${status.tone}`}>{status.label}</span>
+              <span className={`rounded-full border px-2 py-0.5 text-[10px] font-bold ${status.tone}`}>
+                {status.label}
+              </span>
             )}
           </div>
           <h3 className="mt-1 line-clamp-2 text-sm font-bold leading-snug text-sand-950">{need.title}</h3>
@@ -54,7 +56,7 @@ export default function NeedCard({ need, layout = 'vertical' }) {
           </div>
         </div>
       </Link>
-    )
+    );
   }
 
   return (
@@ -77,7 +79,9 @@ export default function NeedCard({ need, layout = 'vertical' }) {
           <Icon size={12} /> {cat.name}
         </span>
         {status && (
-          <span className={`absolute right-3 top-3 rounded-full border bg-white/95 px-2.5 py-1 text-[10px] font-bold ${status.tone}`}>
+          <span
+            className={`absolute right-3 top-3 rounded-full border bg-white/95 px-2.5 py-1 text-[10px] font-bold ${status.tone}`}
+          >
             {status.label}
           </span>
         )}
@@ -88,16 +92,17 @@ export default function NeedCard({ need, layout = 'vertical' }) {
           <MapPin size={12} /> {need.location.village}, {need.location.regency}
         </p>
         <p className="tnum mt-2 text-sm font-semibold text-sand-800">
-          {need.collected.toLocaleString('id-ID')} / {need.target.toLocaleString('id-ID')} {need.unit === 'Rp' ? '— dana' : need.unit}
+          {need.collected.toLocaleString("id-ID")} / {need.target.toLocaleString("id-ID")}{" "}
+          {need.unit === "Rp" ? "— dana" : need.unit}
         </p>
         <div className="mt-2">
           <Progress collected={need.collected} target={need.target} tone="moss" size="sm" showPct />
         </div>
         <p className="mt-2.5 text-xs font-semibold text-brand-700">{remaining}</p>
         <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-bold text-brand-700 transition-all group-hover:gap-2.5 group-hover:text-brand-800">
-          Lihat Detail <ArrowRight size={15} />
+          Ambil Bagian <ArrowRight size={15} />
         </span>
       </div>
     </Link>
-  )
+  );
 }

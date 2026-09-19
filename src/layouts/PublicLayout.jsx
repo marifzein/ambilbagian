@@ -12,19 +12,21 @@ const NAV = [
 
 export function Wordmark({ light = false }) {
   return (
-    <Link to="/" className="group inline-flex items-center gap-2.5">
+    <Link to="/" className="group inline-flex items-center gap-3">
+      {/* Logo lockup sudah memuat wordmark "ambilbagian" — cukup ditambah tagline. */}
       <img
         src="/logo.png"
-        alt="Logo Ambil Bagian"
+        alt="Ambil Bagian — Peta Kebutuhan Nyata"
         className="h-9 w-auto transition-transform duration-300 group-hover:scale-105"
       />
-      <span className="flex flex-col leading-none">
-        <span className={`font-display text-lg font-semibold tracking-tight ${light ? 'text-white' : 'text-brand-950'}`}>
-          Ambil Bagian
-        </span>
-        <span className={`text-[10px] font-semibold uppercase tracking-[0.22em] ${light ? 'text-sand-300' : 'text-brand-600'}`}>
-          Peta Kebutuhan Nyata
-        </span>
+      <span
+        className={`hidden border-l pl-3 text-[10px] font-bold uppercase leading-tight tracking-[0.2em] lg:block ${
+          light ? 'border-white/25 text-sand-300' : 'border-sand-200 text-brand-700'
+        }`}
+      >
+        Peta Kebutuhan
+        <br />
+        Nyata
       </span>
     </Link>
   )
@@ -116,7 +118,7 @@ export default function PublicLayout() {
             <p className="eyebrow">Jelajahi</p>
             <ul className="mt-3 space-y-2 text-sm text-sand-700">
               <li><Link className="hover:text-brand-800" to="/kebutuhan">Daftar Kebutuhan</Link></li>
-              <li><Link className="hover:text-brand-800" to="/peta">Peta Kebutuhan</Link></li>
+              <li><Link className="hover:text-brand-800" to="/peta">Peta Kebaikan</Link></li>
               <li><Link className="hover:text-brand-800" to="/cara-kerja">Cara Kerja</Link></li>
               <li><Link className="hover:text-brand-800" to="/tentang">Tentang Ambil Bagian</Link></li>
             </ul>

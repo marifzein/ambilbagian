@@ -1,6 +1,6 @@
 import { createContext, useCallback, useContext, useMemo, useState } from 'react'
 import { needs as seedNeeds } from '../data/needs'
-import { participation as seedParticipation } from '../data/partners'
+import { participation as seedParticipation, proposalsSeed } from '../data/partners'
 import { autoStatus } from '../utils/format'
 
 /**
@@ -13,6 +13,7 @@ const AppContext = createContext(null)
 export function AppProvider({ children }) {
   const [needs, setNeeds] = useState(seedNeeds)
   const [participation, setParticipation] = useState(seedParticipation)
+  const [proposals, setProposals] = useState(proposalsSeed)
   const [toasts, setToasts] = useState([])
 
   const pushToast = useCallback((toast) => {
@@ -77,9 +78,35 @@ export function AppProvider({ children }) {
 
   const getNeed = useCallback((id) => needs.find((n) => n.id === id), [needs])
 
+  /**
+   * Simulasi pengajuan bantuan baru dari warga.
+   * Di versi API nyata: POST /proposals → tim verifikasi meninjau →
+   * notifikasi dikirim ke mitra distributor.
+   */
+  const addProposal = useCallback(
+    (data) => {
+      const entry = {
+        id: `PGA-${105 + proposals.length}`,
+        photoNames: [],
+        status: 'menunggu',
+        notified: [],
+        submittedAt: new Date().toISOString().slice(0, 10),
+        ...data,
+      }
+      setProposals((prev) => [entry, ...prev])
+      pushToast({
+        title: 'Pengajuan terkirim',
+        message: 'Tim verifikasi akan menghubungi kamu via WhatsApp maksimal 3 hari kerja.',
+        tone: 'success',
+      })
+      return entry
+    },
+    [proposals.length, pushToast]
+  )
+
   const value = useMemo(
-    () => ({ needs, participation, contribute, getNeed, toasts, dismissToast }),
-    [needs, participation, contribute, getNeed, toasts, dismissToast]
+    () => ({ needs, participation, proposals, contribute, addProposal, getNeed, toasts, dismissToast }),
+    [needs, participation, proposals, contribute, addProposal, getNeed, toasts, dismissToast]
   )
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>

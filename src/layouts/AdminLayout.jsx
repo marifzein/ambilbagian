@@ -3,6 +3,7 @@ import { NavLink, Outlet, Link, useLocation } from 'react-router-dom'
 import {
   LayoutDashboard,
   ClipboardList,
+  FilePlus2,
   ShieldCheck,
   Map,
   Truck,
@@ -18,6 +19,7 @@ import {
 const NAV = [
   { to: '/operations', label: 'Overview', icon: LayoutDashboard, end: true },
   { to: '/operations/kebutuhan', label: 'Kebutuhan', icon: ClipboardList },
+  { to: '/operations/pengajuan', label: 'Pengajuan', icon: FilePlus2 },
   { to: '/operations/verifikasi', label: 'Verifikasi', icon: ShieldCheck },
   { to: '/operations/peta', label: 'Peta', icon: Map },
   { to: '/operations/pelaksanaan', label: 'Pelaksanaan', icon: Truck },
@@ -37,12 +39,8 @@ export default function AdminLayout() {
 
   const sidebar = (
     <div className="flex h-full flex-col">
-      <div className="flex h-16 items-center gap-2.5 border-b border-brand-900/60 px-5">
-        <img src="/logo.png" alt="Logo Ambil Bagian" className="h-8 w-auto" />
-        <div className="leading-tight">
-          <p className="text-sm font-bold text-white">Ambil Bagian</p>
-          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-brand-400">Operations</p>
-        </div>
+      <div className="flex h-16 items-center border-b border-brand-900/60 px-5">
+        <img src="/logo.png" alt="Ambil Bagian — Operations" className="h-8 w-auto" />
       </div>
       <nav className="nice-scroll flex-1 space-y-1 overflow-y-auto px-3 py-4">
         {NAV.map((item) => (

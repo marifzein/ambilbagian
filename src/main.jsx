@@ -20,6 +20,7 @@ import AboutPage from './pages/AboutPage.jsx'
 
 import AdminOverview from './pages/admin/AdminOverview.jsx'
 import AdminNeeds from './pages/admin/AdminNeeds.jsx'
+import AdminPengajuan from './pages/admin/AdminPengajuan.jsx'
 import AdminVerification from './pages/admin/AdminVerification.jsx'
 import AdminMap from './pages/admin/AdminMap.jsx'
 import AdminExecution from './pages/admin/AdminExecution.jsx'
@@ -50,6 +51,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <Route index element={<AdminOverview />} />
             <Route path="kebutuhan" element={<AdminNeeds />} />
             <Route path="kebutuhan/:id" element={<AdminNeedDetail />} />
+            <Route path="pengajuan" element={<AdminPengajuan />} />
             <Route path="verifikasi" element={<AdminVerification />} />
             <Route path="peta" element={<AdminMap />} />
             <Route path="pelaksanaan" element={<AdminExecution />} />

@@ -126,7 +126,7 @@ export default function ContributeModal({ need, open, onClose }) {
                   initial={{ scale: 0.6, rotate: -8 }}
                   animate={{ scale: 1, rotate: 0 }}
                   transition={{ type: 'spring', stiffness: 260, damping: 14 }}
-                  className="grid h-16 w-16 place-items-center rounded-full bg-brand-100 text-brand-700"
+                  className="grid h-16 w-16 place-items-center rounded-full bg-moss-100 text-moss-700"
                 >
                   <PartyPopper size={28} />
                 </motion.span>

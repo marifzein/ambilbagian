@@ -75,13 +75,19 @@ export default function NeedsPage() {
   return (
     <div className="container-app py-10 md:py-14">
       <header className="max-w-2xl">
-        <p className="eyebrow">Daftar Kebutuhan</p>
+        <p className="eyebrow">
+          {/* Daftar Kebutuhan */}
+          PETA KEBAIKAN NYATA
+        </p>
         <h1 className="mt-2 font-display text-4xl font-semibold tracking-tight text-sand-950">
-          Semua kebutuhan yang terverifikasi
+          {/* Semua kebutuhan yang terverifikasi */}
+          Kamu pun bisa ambil bagian
         </h1>
         <p className="mt-3 text-sand-600">
-          Cari berdasarkan lokasi atau kebutuhan. Setiap kartu menunjukkan progress terkini — kamu bisa mulai dari yang
-          paling hampir terpenuhi.
+          {/* Cari berdasarkan lokasi atau kebutuhan. Setiap kartu menunjukkan progress terkini — kamu bisa mulai dari yang */}
+          {/* paling hampir terpenuhi. */}
+          Pilih kebaikan yang ingin kamu bantu hari ini.
+          Kamu bisa mulai dari aksi yang paling mendekati target.
         </p>
       </header>
 

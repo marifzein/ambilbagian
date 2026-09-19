@@ -1,13 +1,14 @@
 import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ArrowRight, MapPin, ShieldCheck, HandHeart, Search } from 'lucide-react'
+import { ArrowRight, MapPin, ShieldCheck, HandHeart, Search, FilePlus2, MapPinned } from 'lucide-react'
 import { categories } from '../data/categories'
 import { useApp } from '../store/AppContext.jsx'
 import SectionHeading from '../components/SectionHeading.jsx'
 import NeedCard from '../components/NeedCard.jsx'
 import Progress from '../components/ui/Progress.jsx'
 import ContributeModal from '../components/ContributeModal.jsx'
+import ProposalModal from '../components/ProposalModal.jsx'
 import { formatID, pct } from '../utils/format'
 
 const fadeUp = {
@@ -20,6 +21,7 @@ const fadeUp = {
 export default function HomePage() {
   const { needs } = useApp()
   const [ctaNeed, setCtaNeed] = useState(null)
+  const [proposalCat, setProposalCat] = useState(undefined) // undefined = tertutup
 
   const stats = useMemo(() => {
     const active = needs.filter((n) => n.status !== 'selesai')
@@ -46,12 +48,12 @@ export default function HomePage() {
           <motion.div {...fadeUp}>
             <p className="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-brand-50 px-3.5 py-1.5 text-xs font-bold text-brand-800">
               <MapPin size={13} />
-              Peta kebutuhan nyata — dimulai dari Bojonegoro
+              Peta Kebaikan — dimulai dari Bojonegoro
             </p>
             <h1 className="mt-5 font-display text-4xl font-semibold leading-[1.08] tracking-tight text-sand-950 sm:text-5xl lg:text-[3.4rem]">
-              Berapa pun yang kamu bisa bantu,{' '}
+              Berapa pun yang kamu sisihkan,{' '}
               <span className="relative inline-block">
-                itu sangat berarti.
+                ada senyum yang tercipta darinya.
                 <svg
                   className="absolute -bottom-1.5 left-0 w-full text-ember-500"
                   viewBox="0 0 220 10"
@@ -63,18 +65,33 @@ export default function HomePage() {
               </span>
             </h1>
             <p className="mt-5 max-w-lg text-lg leading-relaxed text-sand-600">
-              Kamu nggak harus bantu semuanya. Cukup ambil bagian — lihat kebutuhan nyata di peta, pahami progresnya,
-              lalu bantu sesuai kemampuanmu.
+              Kamu nggak harus bantu semuanya. 
+              Berapa pun yang kamu sisihkan, ada senyum yang tercipta darinya
+              {/* Cukup ambil bagian — lihat kebutuhan nyata di peta, pahami progresnya, */}
+              {/* lalu bantu sesuai kemampuanmu. */}
             </p>
-            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <Link to="/kebutuhan" className="btn-primary btn-lg">
-                Lihat Kebutuhan
-                <ArrowRight size={17} />
+            <div className="mt-7 space-y-3.5">
+              {/* Peta = pembeda utama platform → CTA primer, paling atas di mobile */}
+              <Link
+                to="/peta"
+                className="btn-primary btn-lg w-full justify-center shadow-lift sm:w-auto"
+              >
+                <MapPinned size={18} />
+                Buka Peta Kebaikan
               </Link>
-              <button onClick={() => setCtaNeed(featured[0] || needs[0])} className="btn-ghost btn-lg">
-                <HandHeart size={17} />
-                Kamu juga bisa ambil bagian!
-              </button>
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+                <Link to="/kebutuhan" className="btn-ghost btn-lg justify-center">
+                  Lihat Kebutuhan
+                  <ArrowRight size={17} />
+                </Link>
+                <button
+                  onClick={() => setCtaNeed(featured[0] || needs[0])}
+                  className="inline-flex items-center justify-center gap-1.5 px-1 text-sm font-bold text-brand-700 underline decoration-brand-300 decoration-2 underline-offset-4 transition-colors hover:text-brand-800"
+                >
+                  <HandHeart size={15} />
+                  Kamu juga bisa ambil bagian!
+                </button>
+              </div>
             </div>
             <p className="mt-6 flex items-center gap-1.5 text-xs text-sand-500">
               <ShieldCheck size={14} className="text-brand-600" />
@@ -102,8 +119,12 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Kartu melayang: mini peta */}
-            <div className="absolute -left-3 -top-5 hidden w-44 rotate-[-3deg] rounded-2xl border border-sand-200 bg-white p-3 shadow-lift sm:block">
+            {/* Kartu melayang: mini peta — bisa ditap, menuju peta interaktif */}
+            <Link
+              to="/peta"
+              className="group absolute -left-3 -top-5 hidden w-44 rotate-[-3deg] rounded-2xl border border-sand-200 bg-white p-3 shadow-lift transition-transform duration-300 hover:rotate-0 hover:scale-[1.04] sm:block"
+              aria-label="Buka peta kebutuhan"
+            >
               <div className="relative h-20 overflow-hidden rounded-xl bg-[#eef2fb]">
                 <div className="absolute inset-0 opacity-40 [background-image:radial-gradient(#b3cbfb_1.4px,transparent_1.4px)] [background-size:10px_10px]" />
                 <svg viewBox="0 0 100 60" className="absolute inset-0 h-full w-full">
@@ -114,10 +135,10 @@ export default function HomePage() {
                   <circle cx="46" cy="46" r="3.5" fill="#0369a1" />
                 </svg>
               </div>
-              <p className="mt-2 text-center text-[11px] font-bold text-sand-700">
-                {stats.activeCount} kebutuhan aktif di peta
+              <p className="mt-2 text-center text-[11px] font-bold text-brand-700 group-hover:text-brand-800">
+                {stats.activeCount} kebutuhan aktif di peta →
               </p>
-            </div>
+            </Link>
 
             {/* Kartu melayang: progress */}
             {featured[0] && (
@@ -170,6 +191,7 @@ export default function HomePage() {
           {categories.map((cat, i) => {
             const Icon = cat.icon
             const count = needs.filter((n) => n.category === cat.id && n.status !== 'selesai').length
+            const href = cat.active ? `/kebutuhan?kategori=${cat.id}` : '/kebutuhan'
             return (
               <motion.div
                 key={cat.id}
@@ -177,13 +199,12 @@ export default function HomePage() {
                 transition={{ ...fadeUp.transition, delay: i * 0.05 }}
                 className={cat.active ? '' : 'opacity-95'}
               >
-                <Link
-                  to={cat.active ? `/kebutuhan?kategori=${cat.id}` : '/kebutuhan'}
+                <div
                   className={`group flex h-full flex-col overflow-hidden rounded-2xl border border-sand-200/80 bg-white shadow-soft transition-all duration-200 hover:-translate-y-1 hover:shadow-lift ${
                     !cat.active ? 'grayscale-[0.4]' : ''
                   }`}
                 >
-                  <div className="relative aspect-[16/9] overflow-hidden">
+                  <Link to={href} className="relative block aspect-[16/9] overflow-hidden">
                     <img
                       src={cat.image}
                       alt={cat.name}
@@ -202,23 +223,46 @@ export default function HomePage() {
                         Segera Hadir
                       </span>
                     )}
-                  </div>
+                  </Link>
                   <div className="flex flex-1 flex-col p-5">
-                    <h3 className="font-display text-xl font-semibold text-sand-950">{cat.name}</h3>
+                    <Link to={href}>
+                      <h3 className="font-display text-[1.55rem] font-bold leading-tight tracking-tight text-sand-950 transition-colors hover:text-brand-800">
+                        {cat.name}
+                      </h3>
+                    </Link>
                     <p className="mt-1 text-[13px] font-medium text-sand-500">{cat.tagline}</p>
                     <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-sand-600">{cat.description}</p>
-                    <div className="mt-auto flex items-center justify-between pt-4">
+                    <div className="mt-auto pt-4">
                       {cat.active ? (
-                        <span className="tnum text-xs font-bold text-brand-700">{count} kebutuhan aktif</span>
+                        <>
+                          <p className="tnum text-xs font-bold text-brand-700">
+                            {count} kebutuhan aktif menunggu
+                          </p>
+                          <button
+                            onClick={() => setProposalCat(cat.id)}
+                            className="btn-primary mt-3 w-full"
+                          >
+                            <FilePlus2 size={16} />
+                            Pengajuan Bantuan
+                          </button>
+                          <Link
+                            to={href}
+                            className="mt-2.5 flex items-center justify-center gap-1 text-xs font-bold text-brand-700 transition-all hover:gap-2 hover:underline"
+                          >
+                            Lihat kebutuhan {cat.short} <ArrowRight size={13} />
+                          </Link>
+                        </>
                       ) : (
-                        <span className="text-xs font-semibold text-sand-400">Belum menerima bantuan</span>
+                        <>
+                          <p className="text-xs font-semibold text-sand-400">Belum menerima bantuan</p>
+                          <button disabled className="btn-ghost mt-3 w-full cursor-not-allowed opacity-60">
+                            Segera Hadir
+                          </button>
+                        </>
                       )}
-                      <span className="inline-flex items-center gap-1 text-sm font-bold text-brand-700 transition-all group-hover:gap-2.5">
-                        {cat.active ? 'Lihat' : 'Nantikan'} <ArrowRight size={15} />
-                      </span>
                     </div>
                   </div>
-                </Link>
+                </div>
               </motion.div>
             )
           })}
@@ -255,21 +299,31 @@ export default function HomePage() {
               <span className="text-brand-200">Cukup ambil bagian.</span>
             </h2>
             <p className="mt-3 max-w-md text-sand-200">
-              Rp10 ribu pun berarti. Berapa pun yang kamu bisa bantu, itu sangat berarti.
+              Berapa pun yang kamu sisihkan, ada senyum yang tercipta darinya.
             </p>
           </div>
           <div className="flex flex-col gap-3 sm:flex-row">
             <Link to="/peta" className="btn-lg btn border border-white/25 bg-white/10 text-white hover:bg-white/20">
-              Buka Peta Kebutuhan
+              Buka Peta Kebaikan
             </Link>
-            <button onClick={() => setCtaNeed(featured[1] || featured[0])} className="btn-lg btn-primary">
+            <button onClick={() => setCtaNeed(featured[1] || featured[0])} className="btn btn-lg bg-white text-brand-800 shadow-soft hover:bg-brand-50">
               Ambil Bagian Sekarang
             </button>
           </div>
         </div>
+        <div className="container-app border-t border-white/10 py-5">
+          <button
+            onClick={() => setProposalCat(null)}
+            className="inline-flex items-center gap-2 text-sm font-bold text-brand-200 transition-colors hover:text-white"
+          >
+            <FilePlus2 size={15} />
+            Punya informasi kebutuhan di sekitarmu? Ajukan di sini — tim kami akan verifikasi.
+          </button>
+        </div>
       </section>
 
       <ContributeModal need={ctaNeed} open={!!ctaNeed} onClose={() => setCtaNeed(null)} />
+      <ProposalModal open={proposalCat !== undefined} onClose={() => setProposalCat(undefined)} presetCategory={proposalCat} />
     </div>
   )
 }

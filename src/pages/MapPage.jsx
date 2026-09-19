@@ -19,7 +19,7 @@ export default function MapPage() {
     <div className="container-app py-10 md:py-14">
       <header className="flex flex-wrap items-end justify-between gap-4">
         <div className="max-w-2xl">
-          <p className="eyebrow">Peta Kebutuhan</p>
+          <p className="eyebrow">Peta Kebaikan</p>
           <h1 className="mt-2 font-display text-4xl font-semibold tracking-tight text-sand-950">
             Kebutuhan nyata, di titik yang nyata
           </h1>

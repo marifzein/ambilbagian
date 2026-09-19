@@ -240,3 +240,139 @@ export const needsSupported = [
   { id: 'NEED-001', count: 187 },
   { id: 'NEED-002', count: 174 },
 ]
+
+/**
+ * Mitra distributor tambahan (contoh prototype, bukan afiliasi resmi).
+ * Menerima notifikasi pengajuan kebutuhan via email/WA/telepon.
+ */
+export const distributorPartners = [
+  {
+    id: 'mdmc',
+    name: 'MDMC Indonesia',
+    type: 'Lembaga kemanusiaan',
+    region: 'Nasional',
+    activePrograms: 3,
+    donePrograms: 8,
+    runningPrograms: 3,
+    reportCompliance: 97,
+    docsRating: 4.7,
+    active: true,
+    note: 'Contoh mitra dalam prototype — bukan afiliasi resmi.',
+  },
+  {
+    id: 'pedulimuslim',
+    name: 'PeduliMuslim',
+    type: 'Lembaga kemanusiaan',
+    region: 'Jawa & Sumatera',
+    activePrograms: 2,
+    donePrograms: 6,
+    runningPrograms: 2,
+    reportCompliance: 95,
+    docsRating: 4.5,
+    active: true,
+    note: 'Contoh mitra dalam prototype — bukan afiliasi resmi.',
+  },
+]
+
+/** Jatuh tempo penggalangan dana per kebutuhan (siklus distributor — contoh). */
+export const fundingCycles = {
+  'NEED-001': { deadline: '2026-10-05' },
+  'NEED-003': { deadline: '2026-09-30' },
+  'NEED-004': { deadline: '2026-10-12' },
+  'NEED-005': { deadline: '2026-09-27' },
+  'NEED-017': { deadline: '2026-10-20' },
+}
+
+/**
+ * Pengajuan bantuan dari warga/pengusul (mock).
+ * status: menunggu → diverifikasi → diteruskan (mitra menerima notifikasi).
+ */
+export const proposalsSeed = [
+  {
+    id: 'PGA-104',
+    category: 'beras',
+    name: 'Supardi',
+    phone: '+62 812-3456-7890',
+    nik: '••••••••3512',
+    village: 'Desa Sumberrejo',
+    regency: 'Bojonegoro',
+    receivers: '87 KK (±340 warga)',
+    quantity: '±2,5 ton beras',
+    notes: 'Mayoritas lansia dan buruh tani; panen gagal karena kemarau panjang.',
+    photoNames: ['kondisi-desa.jpg', 'warga-antre.jpg'],
+    submittedAt: '2026-09-18',
+    status: 'menunggu',
+    notified: [],
+  },
+  {
+    id: 'PGA-103',
+    category: 'air',
+    name: 'Siti Aminah (Kades)',
+    phone: '+62 857-1122-3344',
+    nik: null,
+    village: 'Dusun Ngembal',
+    regency: 'Gresik',
+    receivers: '±150 warga',
+    quantity: '6 tangki air bersih',
+    notes: 'Sumur kering sejak Agustus; air dibeli per jerigen Rp5.000.',
+    photoNames: ['sumur-kering.jpg'],
+    submittedAt: '2026-09-16',
+    status: 'diteruskan',
+    notified: [
+      { partner: 'Lazismu (contoh mitra)', channel: 'Email + WhatsApp', at: '2026-09-16 10:20' },
+      { partner: 'MDMC Indonesia', channel: 'Email + Telepon', at: '2026-09-16 10:20' },
+      { partner: 'PeduliMuslim', channel: 'Email', at: '2026-09-16 10:20' },
+    ],
+  },
+  {
+    id: 'PGA-102',
+    category: 'pendidikan',
+    name: 'Pak Harun (Guru)',
+    phone: '+62 813-9988-7766',
+    nik: null,
+    village: 'SDN 2 Temayang',
+    regency: 'Bojonegoro',
+    receivers: '23 siswa',
+    quantity: '23 pasang sepatu + 23 tas',
+    notes: 'Siswa kelas 4–6; sepatu rusak untuk jalan ±3 km ke sekolah.',
+    photoNames: ['siswa-sepatu-rusak.jpg'],
+    submittedAt: '2026-09-15',
+    status: 'diverifikasi',
+    notified: [],
+  },
+  {
+    id: 'PGA-101',
+    category: 'sembako',
+    name: 'Kader PKK Kebonsari',
+    phone: '+62 822-4455-6677',
+    nik: '••••••••0921',
+    village: 'Kebonsari',
+    regency: 'Madiun',
+    receivers: '40 KK',
+    quantity: '40 paket sembako',
+    notes: 'Isi paket: minyak goreng, gula, telur, mie instan.',
+    photoNames: ['daftar-kk.jpg', 'pos-pkk.jpg'],
+    submittedAt: '2026-09-13',
+    status: 'diteruskan',
+    notified: [{ partner: 'PeduliMuslim', channel: 'Email + WhatsApp', at: '2026-09-14 09:05' }],
+  },
+  {
+    id: 'PGA-100',
+    category: 'bencana',
+    name: 'Linmas Jetak',
+    phone: '+62 856-7788-9900',
+    nik: null,
+    village: 'Dusun Jetak',
+    regency: 'Ngawi',
+    receivers: '±220 warga / 6 RT',
+    quantity: '110 paket makanan + air bersih',
+    notes: 'Banjir kiriman; posko aktif di balai desa.',
+    photoNames: ['banjir-jetak.jpg'],
+    submittedAt: '2026-09-11',
+    status: 'diteruskan',
+    notified: [
+      { partner: 'MDMC Indonesia', channel: 'Email + WhatsApp', at: '2026-09-11 14:40' },
+      { partner: 'Lazismu (contoh mitra)', channel: 'Email + WhatsApp', at: '2026-09-11 14:40' },
+    ],
+  },
+]
